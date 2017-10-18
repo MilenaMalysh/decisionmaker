@@ -1,0 +1,14 @@
+# PyCharm stuff
+.idea/
+*.iml
+*.iws
+
+# Django stuff
+migrations/
+*.sqlite3
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyc
