@@ -1,240 +1,63 @@
-<!doctype html>
+{% extends 'base.html' %}
 
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-
-    <title>Survey</title>
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
-          integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-
-
-    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"
-            integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
-            crossorigin="anonymous"></script>
-
-    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"
-            integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
-            crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"
-            integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
-            crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
-            integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
-            crossorigin="anonymous"></script>
-    <script src="https://use.fontawesome.com/6ee10db360.js"></script>
-    <style>
-        .centred-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .questions-list {
-            min-width: 80%;
-            max-width: 80%;
-        }
-
-        .card {
-            width: 100%;
-        }
-
-        .option, .option-header {
-            display: inline-flex;
-            width: 100%;
-            justify-content: space-between;
-        }
-
-        .option label {
-            white-space: nowrap;
-            margin-bottom: auto;
-            margin-top: auto;
-        }
-
-        .option .input-group {
-            width: calc(100% / 2.5);
-        }
-
-        .list-group-horizontal .list-group-item {
-            display: inline-block;
-        }
-
-        .list-group-horizontal .list-group-item {
-            width: calc(100% / 3);
-            background-color: #7986cb;
-            margin-bottom: 0;
-            margin-left: -4px;
-            margin-right: 0;
-        }
-
-        .list-group-horizontal .list-group-item:first-child {
-            border-top-right-radius: 0;
-            border-bottom-left-radius: 4px;
-        }
-
-        .list-group-horizontal .list-group-item:last-child {
-            border-top-right-radius: 4px;
-            border-bottom-left-radius: 0;
-        }
-        .importance{
-            display: inline-flex;
-        }
-        .priority-label{
-            white-space: nowrap;
-            margin-bottom: auto;
-            margin-top: auto;
-            margin-right: 5px;
-        }
-
-    </style>
-</head>
-
-<body>
-<div class="centred-container">
-    <ul class="list-group questions-list">
-        <li class="list-group-item">
-            <div class="card">
-                <div class="card-header">
-                    Characteristic #1
-                </div>
-                <div class="card-block">
-                    <div class="option-header">
-                        <h4 class="card-title">Public transport accessibility </h4>
-                        <div class="importance">
-                            <a class="priority-label" href="" title="Change priority">High Importance (70%)</a>
-                            <div class="input-group">
-                                <span class="input-group-addon">%</span>
-                                <input type="number" class="form-control importance-value" min="0" max="100">
-                                <span class="input-group-addon"><i class="fa fa-reply" aria-hidden="true"></i></span>
+{% block content %}
+    <div class="centred-container">
+        <ul class="list-group questions-list">
+            <li class="list-group-item">
+                <div class="card">
+                    <div class="card-header">
+                        Characteristic #1
+                    </div>
+                    <div class="card-block">
+                        <div class="option-header">
+                            <h4 class="card-title">Public transport accessibility </h4>
+                            <div class="importance">
+                                <span class="priority-label"></span>
+                                <div class="input-group">
+                                    <span class="input-group-addon">0</span>
+                                    <input type="number" class="form-control importance-value ranged-value" min="0" max="10">
+                                    <span class="input-group-addon">10</span>
+                                </div>
                             </div>
                         </div>
+                        <p class="card-text">You can reach hospital in Wimbledon in 25 min by bus; hospitals in Dulwich and
+                            Kensington are easily reachable by bicycle </p>
+                        <ul class="list-inline list-group-horizontal">
+                            <li class="list-group-item">
+                                <div class="option">
+                                    <label>Wimbledon</label>
+                                    <div class="input-group">
+                                        <span class="input-group-addon">0</span>
+                                        <input type="number" class="form-control ranged-value" min="0" max="10">
+                                        <span class="input-group-addon">10</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="option">
+                                    <label>Dulwich</label>
+                                    <div class="input-group">
+                                        <span class="input-group-addon">0</span>
+                                        <input type="number" class="form-control ranged-value" min="0" max="10">
+                                        <span class="input-group-addon">10</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="option">
+                                    <label>Kensington</label>
+                                    <div class="input-group">
+                                        <span class="input-group-addon">0</span>
+                                        <input type="number" class="form-control ranged-value" min="0" max="10">
+                                        <span class="input-group-addon">10</span>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
-                    <p class="card-text">You can reach hospital in Wimbledon in 25 min by bus; hospitals in Dulwich and Kensington are easily reachable by bicycle </p>
-                    <ul class="list-inline list-group-horizontal">
-                        <li class="list-group-item">
-                            <div class="option">
-                                <label>Wimbledon</label>
-                                <div class="input-group">
-                                    <span class="input-group-addon">%</span>
-                                    <input type="number" class="form-control" min="0" max="100">
-                                </div>
-                            </div>
-                        </li>
-                        <li class="list-group-item">
-                            <div class="option">
-                                <label>Dulwich</label>
-                                <div class="input-group">
-                                    <span class="input-group-addon">%</span>
-                                    <input type="number" class="form-control" min="0" max="100">
-                                </div>
-                            </div>
-                        </li>
-                        <li class="list-group-item">
-                            <div class="option">
-                                <label>Kensington</label>
-                                <div class="input-group">
-                                    <span class="input-group-addon">%</span>
-                                    <input type="number" class="form-control" min="0" max="100">
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
                 </div>
-            </div>
-        </li>
-        <li class="list-group-item">
-            <div class="card">
-                <div class="card-header">
-                    Characteristic #2
-                </div>
-                <div class="card-block">
-                    <div class="option-header">
-                        <h4 class="card-title">Building duration </h4>
-                        <div class="importance">
-                            <a class="priority-label" href="" title="Change priority">Low Importance (23%)</a>
-                            <div class="input-group">
-                                <span class="input-group-addon">%</span>
-                                <input type="number" class="form-control importance-value" min="0" max="100">
-                                <span class="input-group-addon"><i class="fa fa-reply" aria-hidden="true"></i></span>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="card-text">Approximately building duration of hospital in Wimbledon is 1 year, hospitals in Dulwich and Kensington - 8 month</p>
-                    <ul class="list-inline list-group-horizontal">
-                        <li class="list-group-item">
-                            <div class="option">
-                                <label>Wimbledon</label>
-                                <div class="input-group">
-                                    <span class="input-group-addon">%</span>
-                                    <input type="number" class="form-control" min="0" max="100">
-                                </div>
-                            </div>
-                        </li>
-                        <li class="list-group-item">
-                            <div class="option">
-                                <label>Dulwich</label>
-                                <div class="input-group">
-                                    <span class="input-group-addon">%</span>
-                                    <input type="number" class="form-control" min="0" max="100">
-                                </div>
-                            </div>
-                        </li>
-                        <li class="list-group-item">
-                            <div class="option">
-                                <label>Kensington</label>
-                                <div class="input-group">
-                                    <span class="input-group-addon">%</span>
-                                    <input type="number" class="form-control" min="0" max="100">
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </li>
-        <li class="list-group-item">
-            <div class="card">
-                <div class="card-header">
-                    Characteristic #3
-                </div>
-                <div class="card-block">
-                    <h4 class="card-title">District's attractiveness</h4>
-                    <p class="card-text">There ais see lake hos. 3, but near hospital 2 there is situated in very green
-                        place</p>
-                    <ul class="list-inline list-group-horizontal">
-                        <li class="list-group-item">
-                            <div class="option">
-                                <label>Wimbledon</label>
-                                <div class="input-group">
-                                    <span class="input-group-addon">%</span>
-                                    <input type="number" class="form-control" min="0" max="100">
-                                </div>
-                            </div>
-                        </li>
-                        <li class="list-group-item">
-                            <div class="option">
-                                <label>Dulwich</label>
-                                <div class="input-group">
-                                    <span class="input-group-addon">%</span>
-                                    <input type="number" class="form-control" min="0" max="100">
-                                </div>
-                            </div>
-                        </li>
-                        <li class="list-group-item">
-                            <div class="option">
-                                <label>Kensington</label>
-                                <div class="input-group">
-                                    <span class="input-group-addon">%</span>
-                                    <input type="number" class="form-control" min="0" max="100">
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </li>
-    </ul>
-</div>
-</body>
-</html>
+            </li>
+        </ul>
+    </div>
+{% endblock %}
+
