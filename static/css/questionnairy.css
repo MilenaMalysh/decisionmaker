@@ -1,16 +1,25 @@
-.centred-container {
+.centred-container, header {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.questions-list {
+.questions-list, #header-div {
     min-width: 80%;
     max-width: 80%;
 }
 
 .card {
     width: 100%;
+}
+
+.card-block {
+    background-color: rgb(46, 56, 64);
+    color: white;
+}
+
+.card-header {
+    background-color: rgb(217, 247, 255);
 }
 
 .option, .option-header {
@@ -31,24 +40,13 @@
 
 .list-group-horizontal .list-group-item {
     display: inline-block;
-}
-
-.list-group-horizontal .list-group-item {
     width: calc(100% / 3);
-    background-color: #7986cb;
+    background-color: rgb(46, 56, 64);
+    color: white;
     margin-bottom: 0;
     margin-left: -4px;
     margin-right: 0;
-}
-
-.list-group-horizontal .list-group-item:first-child {
-    border-top-right-radius: 0;
-    border-bottom-left-radius: 4px;
-}
-
-.list-group-horizontal .list-group-item:last-child {
-    border-top-right-radius: 4px;
-    border-bottom-left-radius: 0;
+    border-color: rgba(230, 230, 250, 0.2);
 }
 
 .importance {
@@ -62,3 +60,41 @@
     margin-right: 5px;
 }
 
+body {
+    background-color: rgb(46, 56, 64);
+    background-position: top;
+    background-repeat: repeat;
+}
+
+#header-div {
+    font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+    font-size: 40pt;
+    color: aliceblue;
+}
+
+#header-tools {
+    margin-top: 10px;
+    float: right;
+}
+
+#new-survey-btn {
+    background-color: rgb(68, 129, 166);
+    border-radius: 5px;
+    color: white;
+    width: 200px;
+}
+
+#social-networks .fa {
+    font-size: 30px;
+    width: calc(100%/4);
+    text-align: center;
+    text-decoration: none;
+    margin: 10px 2px;
+    border-radius: 5px;
+    background: rgb(68, 129, 166);
+    color: white;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
