@@ -10,7 +10,7 @@ class Decision(models.Model):
 class Criteria(models.Model):
     name = models.CharField(max_length=50)
     decision = models.ForeignKey(Decision, on_delete=models.CASCADE)
-    weight = models.IntegerField(min_value=1, max_value=100)
+    weight = models.IntegerField()
 
 
 class Option(models.Model):
@@ -25,7 +25,7 @@ class User(models.Model):
 
 
 class Answer(models.Model):
-    magnitude = models.IntegerField(min_value=1, max_value=10)
+    magnitude = models.IntegerField()
     criteria = models.ForeignKey(Criteria, on_delete=models.CASCADE)
     option = models.ForeignKey(Option, on_delete=models.CASCADE)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
