@@ -2,62 +2,66 @@
 
 {% block content %}
     <div class="centred-container">
-        <ul class="list-group questions-list">
-            <li>
-                <div class="card">
-                    <div class="card-header">
-                        Characteristic #1
-                    </div>
-                    <div class="card-block">
-                        <div class="option-header">
+        <div class="questions-list">
+            <ul class="list-group">
+                <li>
+                    <div class="card">
+                        <div class="card-header">
                             <h4 class="card-title">Public transport accessibility </h4>
                             <div class="importance">
-                                <span class="priority-label"></span>
+                                <span class="priority-label">Weight</span>
                                 <div class="input-group">
                                     <span class="input-group-addon">0</span>
-                                    <input type="number" class="form-control importance-value ranged-value" min="0" max="10">
+                                    <input type="number" class="form-control importance-value ranged-value" min="0"
+                                           max="10">
                                     <span class="input-group-addon">10</span>
                                 </div>
                             </div>
                         </div>
-                        <p class="card-text">You can reach hospital in Wimbledon in 25 min by bus; hospitals in Dulwich and
-                            Kensington are easily reachable by bicycle </p>
-                        <ul class="list-inline list-group-horizontal">
-                            <li class="list-group-item">
-                                <div class="option">
-                                    <label>Wimbledon</label>
-                                    <div class="input-group">
-                                        <span class="input-group-addon">0</span>
-                                        <input type="number" class="form-control ranged-value" min="0" max="10">
-                                        <span class="input-group-addon">10</span>
+                        <div class="card-block">
+                            <p class="card-text">You can reach hospital in Wimbledon in 25 min by bus; hospitals in
+                                Dulwich and
+                                Kensington are easily reachable by bicycle </p>
+                            <ul class="list-inline list-group-horizontal">
+                                <li class="list-group-item">
+                                    <div class="option">
+                                        <label>Wimbledon</label>
+                                        <div class="input-group">
+                                            <span class="input-group-addon">0</span>
+                                            <input type="number" class="form-control ranged-value" min="0" max="10">
+                                            <span class="input-group-addon">10</span>
+                                        </div>
                                     </div>
-                                </div>
-                            </li>
-                            <li class="list-group-item">
-                                <div class="option">
-                                    <label>Dulwich</label>
-                                    <div class="input-group">
-                                        <span class="input-group-addon">0</span>
-                                        <input type="number" class="form-control ranged-value" min="0" max="10">
-                                        <span class="input-group-addon">10</span>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="option">
+                                        <label>Dulwich</label>
+                                        <div class="input-group">
+                                            <span class="input-group-addon">0</span>
+                                            <input type="number" class="form-control ranged-value" min="0" max="10">
+                                            <span class="input-group-addon">10</span>
+                                        </div>
                                     </div>
-                                </div>
-                            </li>
-                            <li class="list-group-item">
-                                <div class="option">
-                                    <label>Kensington</label>
-                                    <div class="input-group">
-                                        <span class="input-group-addon">0</span>
-                                        <input type="number" class="form-control ranged-value" min="0" max="10">
-                                        <span class="input-group-addon">10</span>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="option">
+                                        <label>Kensington</label>
+                                        <div class="input-group">
+                                            <span class="input-group-addon">0</span>
+                                            <input type="number" class="form-control ranged-value" min="0" max="10">
+                                            <span class="input-group-addon">10</span>
+                                        </div>
                                     </div>
-                                </div>
-                            </li>
-                        </ul>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-                </div>
-            </li>
-        </ul>
+                </li>
+            </ul>
+            <div class="row">
+                <button type="button" class="btn" id="submit-survey-btn">Submit results</button>
+            </div>
+        </div>
     </div>
 {% endblock %}
 

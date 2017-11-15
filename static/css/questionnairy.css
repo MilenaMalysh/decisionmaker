@@ -1,3 +1,24 @@
+/**/
+/**/
+/*COMMON*/
+/**/
+/**/
+
+body {
+    background-color: rgb(46, 56, 64);
+}
+
+#header-div {
+    font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+    font-size: 40pt;
+    color: aliceblue;
+}
+
+#header-tools {
+    margin-top: 20px;
+    float: right;
+}
+
 .centred-container, header {
     display: flex;
     align-items: center;
@@ -9,80 +30,13 @@
     max-width: 80%;
 }
 
-.card {
-    width: 100%;
-}
-
-.card-block {
-    background-color: rgb(46, 56, 64);
-    color: white;
-}
-
-.card-header {
-    background-color: rgb(217, 247, 255);
-}
-
-.option, .option-header {
-    display: inline-flex;
-    width: 100%;
-    justify-content: space-between;
-}
-
-.option label {
-    white-space: nowrap;
-    margin-bottom: auto;
-    margin-top: auto;
-}
-
-.option .input-group {
-    width: calc(100% / 2.5);
-}
-
-.list-group-horizontal .list-group-item {
-    display: inline-block;
-    width: calc(100% / 3);
-    background-color: rgb(46, 56, 64);
-    color: white;
-    margin-bottom: 0;
-    margin-left: -4px;
-    margin-right: 0;
-    border-color: rgba(230, 230, 250, 0.2);
-}
-
-.importance {
-    display: inline-flex;
-}
-
-.priority-label {
-    white-space: nowrap;
-    margin-bottom: auto;
-    margin-top: auto;
-    margin-right: 5px;
-}
-
-body {
-    background-color: rgb(46, 56, 64);
-    background-position: top;
-    background-repeat: repeat;
-}
-
-#header-div {
-    font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
-    font-size: 40pt;
-    color: aliceblue;
-}
-
-#header-tools {
-    margin-top: 10px;
-    float: right;
-}
-
 #new-survey-btn {
     background-color: rgb(68, 129, 166);
     border-radius: 5px;
     color: white;
     width: 200px;
 }
+
 
 #social-networks .fa {
     font-size: 30px;
@@ -97,4 +51,109 @@ body {
 
 .fa:hover {
     opacity: 0.7;
+}
+
+/**/
+/**/
+/*RESULT PAGE*/
+/**/
+/**/
+#survey-result-container {
+    margin-top: 140px
+}
+#result-block{
+    display: flex;
+    align-items: center;
+}
+
+#result-block>div{
+    flex: 1;
+}
+
+#result-question{
+    border-radius: 15px;
+    border: 2px white solid;
+    color: aliceblue;
+    font-size: 35pt;
+    text-align: center;
+    margin: 10px;
+}
+#result-question>p{
+    max-width: 60%;
+    min-width: 60%;
+    margin: auto;
+}
+
+/**/
+/**/
+/*SURVEY PAGE*/
+/**/
+/**/
+
+.card {
+    width: 100%;
+    border-color: rgb(68, 129, 166);
+}
+
+.card-block {
+    background-color: rgb(46, 56, 64);
+    color: white;
+}
+
+.card-header {
+    background-color: rgb(68, 129, 166);
+    color: white;
+}
+
+.option, .card-header {
+    display: inline-flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.option label {
+    white-space: nowrap;
+    margin-bottom: auto;
+    margin-top: auto;
+}
+
+.input-group {
+    max-width: 140px;
+    min-width: 140px;
+    background-color: white;
+    border-radius: 4px;
+}
+
+
+.list-group-horizontal .list-group-item {
+    display: inline-block;
+    width: calc(100% / 3);
+    background-color: rgb(46, 56, 64);
+    color: white;
+    margin-bottom: 0;
+    margin-left: -4px;
+    margin-right: 0;
+    border-color: rgba(230, 230, 250, 0.2);
+}
+
+.importance {
+    display: inline-flex;
+    margin-right: 22px;
+}
+
+.priority-label {
+    white-space: nowrap;
+    margin-bottom: auto;
+    margin-top: auto;
+    margin-right: 15px;
+    font-size: 15pt;
+}
+#submit-survey-btn {
+    background-color: rgb(68, 129, 166);
+    border-radius: 5px;
+    color: white;
+    width: 200px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 30px;
 }

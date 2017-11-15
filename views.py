@@ -5,4 +5,4 @@ import settings
 
 def questionnairy_page(request):
     print(settings.STATICFILES_DIRS)
-    return render(request, 'questionnairy.html')
+    return render(request, 'result_page.html')
