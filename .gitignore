@@ -4,7 +4,6 @@
 *.iws
 
 # Django stuff
-migrations/
 *.sqlite3
 
 # Byte-compiled / optimized / DLL files
