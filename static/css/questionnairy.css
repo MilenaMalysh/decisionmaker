@@ -1,0 +1,203 @@
+/**/
+/**/
+/*COMMON*/
+/**/
+/**/
+
+body {
+    background-color: rgb(46, 56, 64);
+}
+
+#header-div {
+    font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+    font-size: 40pt;
+    color: aliceblue;
+}
+
+#header-tools {
+    margin-top: 20px;
+    float: right;
+}
+
+.centred-container, header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.questions-list, #header-div {
+    min-width: 80%;
+    max-width: 80%;
+}
+
+#new-survey-btn {
+    background-color: rgb(0, 128, 128);
+    border-radius: 5px;
+    color: white;
+    width: 300px;
+}
+
+
+#social-networks .fa {
+    font-size: 30px;
+    width: calc(100%/4);
+    text-align: center;
+    text-decoration: none;
+    margin: 10px 2px;
+    border-radius: 5px;
+    background-color: rgb(0, 128, 128);
+    color: white;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+/**/
+/**/
+/*RESULT PAGE*/
+/**/
+/**/
+#survey-result-container {
+    margin-top: 140px;
+    max-width: 80%;
+    min-width: 80%;
+}
+#result-block{
+    display: flex;
+    align-items: center;
+}
+
+#result-block>div{
+    flex: 1;
+}
+
+#result-block>div:first-child{
+    border-right: 2px white solid;
+}
+
+#right-option-content, #left-option-content{
+    max-width: 90%;
+    min-width: 90%;
+    margin-top: 15px;
+}
+
+#right-option-content{
+    float: right;
+}
+
+#left-option-content{
+    float: left;
+}
+
+.option-text{
+    border-radius: 10px;
+    border: 2px white solid;
+    color: aliceblue;
+    font-size: 25pt;
+}
+.option-text>p{
+    margin: 20px;
+}
+
+#result-question{
+    border-radius: 15px;
+    border: 2px white solid;
+    color: aliceblue;
+    font-size: 35pt;
+    text-align: center;
+    margin-bottom: 20px;
+}
+#result-question>p{
+    max-width: 60%;
+    min-width: 60%;
+    margin: auto;
+}
+#predefined-weight-result-btn, #mean-weight-result-btn{
+    width: 100%;
+    color: aliceblue;
+    font-size: 25pt;
+    margin-top: 20px;
+    padding: 5%;
+    border-radius: 15px;
+}
+#predefined-weight-result-btn{
+    background-color: rgb(0, 128, 128);
+}
+#mean-weight-result-btn{
+    background-color: lightgrey;
+}
+
+/**/
+/**/
+/*SURVEY PAGE*/
+/**/
+/**/
+
+.card {
+    width: 100%;
+    background-color: rgb(0, 128, 128);
+}
+
+.card-block {
+    background-color: rgb(46, 56, 64);
+    color: white;
+}
+
+.card-header {
+    background-color: rgb(0, 128, 128);
+    color: white;
+}
+
+.option, .card-header {
+    display: inline-flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.option label {
+    white-space: nowrap;
+    margin-bottom: auto;
+    margin-top: auto;
+}
+
+.input-group {
+    max-width: 140px;
+    min-width: 140px;
+    background-color: white;
+    border-radius: 4px;
+}
+
+
+.list-group-horizontal .list-group-item {
+    display: inline-block;
+    width: calc(100% / 3);
+    background-color: rgb(46, 56, 64);
+    color: white;
+    margin-bottom: 0;
+    margin-left: -4px;
+    margin-right: 0;
+    border-color: rgba(230, 230, 250, 0.2);
+}
+
+.importance {
+    display: inline-flex;
+    margin-right: 22px;
+}
+
+.priority-label {
+    white-space: nowrap;
+    margin-bottom: auto;
+    margin-top: auto;
+    margin-right: 15px;
+    font-size: 15pt;
+}
+#submit-survey-btn {
+    background-color: rgb(0, 128, 128);
+    border-radius: 5px;
+    color: white;
+    width: 300px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 30px;
+}

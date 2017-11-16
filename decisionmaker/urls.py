@@ -19,4 +19,5 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url('', include('app.urls')),
+    url(r'^filling', views.questionnairy_page, name='questionnairy_page'),
 ]

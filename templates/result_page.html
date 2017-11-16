@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="centred-container">
+        <div id="survey-result-container">
+            <div id="result-question">
+                <p>Which decision making method do you agree with?</p>
+            </div>
+            <div id="result-block">
+                <div>
+                    <div id="left-option-content">
+                        <div class="option-text">
+                            <p>Result computed with the weights predefined by team leader</p>
+                        </div>
+                        <button type="button" class="btn" id="predefined-weight-result-btn">Option #1</button>
+                    </div>
+                </div>
+                <div>
+                    <div id="right-option-content">
+                        <div class="option-text">
+                            <p>Result computed using the mean weights entered by every team member</p>
+                        </div>
+                        <button type="button" class="btn" id="mean-weight-result-btn">Option #1</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
