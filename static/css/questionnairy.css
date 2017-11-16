@@ -31,10 +31,10 @@ body {
 }
 
 #new-survey-btn {
-    background-color: rgb(68, 129, 166);
+    background-color: rgb(0, 128, 128);
     border-radius: 5px;
     color: white;
-    width: 200px;
+    width: 300px;
 }
 
 
@@ -45,7 +45,7 @@ body {
     text-decoration: none;
     margin: 10px 2px;
     border-radius: 5px;
-    background: rgb(68, 129, 166);
+    background-color: rgb(0, 128, 128);
     color: white;
 }
 
@@ -59,7 +59,9 @@ body {
 /**/
 /**/
 #survey-result-container {
-    margin-top: 140px
+    margin-top: 140px;
+    max-width: 80%;
+    min-width: 80%;
 }
 #result-block{
     display: flex;
@@ -70,18 +72,60 @@ body {
     flex: 1;
 }
 
+#result-block>div:first-child{
+    border-right: 2px white solid;
+}
+
+#right-option-content, #left-option-content{
+    max-width: 90%;
+    min-width: 90%;
+    margin-top: 15px;
+}
+
+#right-option-content{
+    float: right;
+}
+
+#left-option-content{
+    float: left;
+}
+
+.option-text{
+    border-radius: 10px;
+    border: 2px white solid;
+    color: aliceblue;
+    font-size: 25pt;
+}
+.option-text>p{
+    margin: 20px;
+}
+
 #result-question{
     border-radius: 15px;
     border: 2px white solid;
     color: aliceblue;
     font-size: 35pt;
     text-align: center;
-    margin: 10px;
+    margin-bottom: 20px;
 }
 #result-question>p{
     max-width: 60%;
     min-width: 60%;
     margin: auto;
+}
+#predefined-weight-result-btn, #mean-weight-result-btn{
+    width: 100%;
+    color: aliceblue;
+    font-size: 25pt;
+    margin-top: 20px;
+    padding: 5%;
+    border-radius: 15px;
+}
+#predefined-weight-result-btn{
+    background-color: rgb(0, 128, 128);
+}
+#mean-weight-result-btn{
+    background-color: lightgrey;
 }
 
 /**/
@@ -92,7 +136,7 @@ body {
 
 .card {
     width: 100%;
-    border-color: rgb(68, 129, 166);
+    background-color: rgb(0, 128, 128);
 }
 
 .card-block {
@@ -101,7 +145,7 @@ body {
 }
 
 .card-header {
-    background-color: rgb(68, 129, 166);
+    background-color: rgb(0, 128, 128);
     color: white;
 }
 
@@ -149,10 +193,10 @@ body {
     font-size: 15pt;
 }
 #submit-survey-btn {
-    background-color: rgb(68, 129, 166);
+    background-color: rgb(0, 128, 128);
     border-radius: 5px;
     color: white;
-    width: 200px;
+    width: 300px;
     margin-right: auto;
     margin-left: auto;
     margin-top: 30px;
