@@ -29,3 +29,10 @@ class Answer(models.Model):
     criteria = models.ForeignKey(Criteria, on_delete=models.CASCADE)
     option = models.ForeignKey(Option, on_delete=models.CASCADE)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
+
+
+class Invitation(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    decision = models.ForeignKey(Decision, on_delete=models.CASCADE)
+    sent = models.BooleanField(default=False)
+
