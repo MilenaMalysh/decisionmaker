@@ -2,53 +2,32 @@
 
 {% block content %}
     <div class="centred-container">
-        <div class="questions-list">
+        <div class="questions-list" id="app">
             <ul class="list-group">
-                <li>
+                <li v-for="answer in answers">
                     <div class="card">
                         <div class="card-header">
-                            <h4 class="card-title">Public transport accessibility </h4>
+                            <h4 class="card-title">[[ findQuestion(answer.question_id).title ]]</h4>
                             <div class="importance">
                                 <span class="priority-label">Weight</span>
                                 <div class="input-group">
-                                    <span class="input-group-addon">0</span>
-                                    <input type="number" class="form-control importance-value ranged-value" min="0"
-                                           max="10">
+                                    <span class="input-group-addon">1</span>
+                                    <input type="number" class="form-control importance-value ranged-value" min="1"
+                                           max="10" v-model="answer.weight">
                                     <span class="input-group-addon">10</span>
                                 </div>
                             </div>
                         </div>
                         <div class="card-block">
-                            <p class="card-text">You can reach hospital in Wimbledon in 25 min by bus; hospitals in
-                                Dulwich and
-                                Kensington are easily reachable by bicycle </p>
+                            <p class="card-text"> [[ findQuestion(answer.question_id).description ]]</p>
                             <ul class="list-inline list-group-horizontal">
-                                <li class="list-group-item">
+                                <li class="list-group-item" v-for="option in answer.options">
                                     <div class="option">
-                                        <label>Wimbledon</label>
+                                        <label>[[ findOption(option.option_id).title ]]</label>
                                         <div class="input-group">
-                                            <span class="input-group-addon">0</span>
-                                            <input type="number" class="form-control ranged-value" min="0" max="10">
-                                            <span class="input-group-addon">10</span>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="list-group-item">
-                                    <div class="option">
-                                        <label>Dulwich</label>
-                                        <div class="input-group">
-                                            <span class="input-group-addon">0</span>
-                                            <input type="number" class="form-control ranged-value" min="0" max="10">
-                                            <span class="input-group-addon">10</span>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="list-group-item">
-                                    <div class="option">
-                                        <label>Kensington</label>
-                                        <div class="input-group">
-                                            <span class="input-group-addon">0</span>
-                                            <input type="number" class="form-control ranged-value" min="0" max="10">
+                                            <span class="input-group-addon">1</span>
+                                            <input type="number" class="form-control ranged-value" min="1" max="10"
+                                                   v-model="option.score">
                                             <span class="input-group-addon">10</span>
                                         </div>
                                     </div>
@@ -59,7 +38,8 @@
                 </li>
             </ul>
             <div class="row">
-                <button type="button" class="btn" id="submit-survey-btn">Submit results</button>
+                <button type="button" class="btn" id="submit-survey-btn" v-on:click="submitResults">Submit results
+                </button>
             </div>
         </div>
     </div>

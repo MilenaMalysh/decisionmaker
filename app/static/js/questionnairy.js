@@ -1,22 +1,39 @@
-/**
- * Created by Milena on 10.11.2017.
- */
-console.log($(".importance-value"));
-$(".ranged-value").on("input", function () {
-    var isAllowed = /^\+?(0|[1-9]\d*)$/.test(this.value);
-    if (isAllowed) {
-        if (parseInt(this.value) < 0) {
-            this.value = 1;
-        } else if (parseInt(this.value) > 10) {
-            this.value = 10;
-        }
-    }else{
-        this.value = '';
+let answers = _.map(questions, function (question) {
+    return {
+        question_id: question.id, weight: '', options: _.map(options, function (option) {
+            return {option_id: option.id, score: ''}
+        })
     }
 });
 
-$(".ranged-value").keydown(function (e) {
-    if (e.which > 90 || (e.which < 48 && e.which < 65)) {
-        e.preventDefault();
+let validate=()=>{
+    return true;
+};
+var app = new Vue({
+    el: '#app',
+    data: {
+        answers: answers
+    },
+    delimiters: ["[[", "]]"],
+    methods: {
+        findQuestion: (id)=> {
+            return _.find(questions, function (question) {
+                return question.id == id
+            })
+        },
+        findOption: (id)=> {
+            return _.find(options, function (option) {
+                return option.id == id
+            })
+        },
+        submitResults: function () {
+            if (validate()) {
+                $.ajax({
+                    type: "POST",
+                    url: '/submit_results',
+                    data: this.answers
+                });
+            }
+        }
     }
 });
