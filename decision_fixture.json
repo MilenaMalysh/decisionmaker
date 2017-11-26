@@ -1,0 +1,1612 @@
+[
+{
+    "model": "contenttypes.contenttype",
+    "pk": 1,
+    "fields": {
+        "app_label": "admin",
+        "model": "logentry"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 2,
+    "fields": {
+        "app_label": "auth",
+        "model": "group"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 3,
+    "fields": {
+        "app_label": "auth",
+        "model": "permission"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 4,
+    "fields": {
+        "app_label": "auth",
+        "model": "user"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 5,
+    "fields": {
+        "app_label": "contenttypes",
+        "model": "contenttype"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 6,
+    "fields": {
+        "app_label": "sessions",
+        "model": "session"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 7,
+    "fields": {
+        "app_label": "app",
+        "model": "user"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 8,
+    "fields": {
+        "app_label": "app",
+        "model": "criteria"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 9,
+    "fields": {
+        "app_label": "app",
+        "model": "option"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 10,
+    "fields": {
+        "app_label": "app",
+        "model": "answer"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 11,
+    "fields": {
+        "app_label": "app",
+        "model": "decision"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 12,
+    "fields": {
+        "app_label": "app",
+        "model": "weight"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 13,
+    "fields": {
+        "app_label": "model",
+        "model": "user"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 14,
+    "fields": {
+        "app_label": "model",
+        "model": "answer"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 15,
+    "fields": {
+        "app_label": "model",
+        "model": "weight"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 16,
+    "fields": {
+        "app_label": "model",
+        "model": "decision"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 17,
+    "fields": {
+        "app_label": "model",
+        "model": "option"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 18,
+    "fields": {
+        "app_label": "model",
+        "model": "criteria"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "1wmc8ltdu37pnzyabk542zd4ujturptd",
+    "fields": {
+        "session_data": "YjY3ZThhZDdjMzc4NmQ1NDJiOWJmMmYwMmE5YTM1NGMyZjM2YzU3Mjp7Il9hdXRoX3VzZXJfaWQiOiIyIiwiX2F1dGhfdXNlcl9oYXNoIjoiNTllZDlkOWRlYTZjN2Q2ZmI4ZmUxYWMyOWJkYTc1MTlhZGM4YjUwZCIsIl9hdXRoX3VzZXJfYmFja2VuZCI6ImRqYW5nby5jb250cmliLmF1dGguYmFja2VuZHMuTW9kZWxCYWNrZW5kIn0=",
+        "expire_date": "2017-12-08T17:27:38.337Z"
+    }
+},
+{
+    "model": "app.decision",
+    "pk": 1,
+    "fields": {
+        "name": "Choosing a Concert",
+        "description": "The Beatles want to choose the location for theirs next concert. Should they play in Germany or USA? The criterias are: Coolnes of the Country and Costs."
+    }
+},
+{
+    "model": "app.criteria",
+    "pk": 1,
+    "fields": {
+        "name": "Coolness of the country",
+        "decision": 1
+    }
+},
+{
+    "model": "app.criteria",
+    "pk": 2,
+    "fields": {
+        "name": "Costs",
+        "decision": 1
+    }
+},
+{
+    "model": "app.option",
+    "pk": 1,
+    "fields": {
+        "name": "USA",
+        "decision": 1
+    }
+},
+{
+    "model": "app.option",
+    "pk": 2,
+    "fields": {
+        "name": "Germany",
+        "decision": 1
+    }
+},
+{
+    "model": "app.user",
+    "pk": 2,
+    "fields": {
+        "first_name": "Paul",
+        "last_name": "McCartney",
+        "leader": 1,
+        "email": "a"
+    }
+},
+{
+    "model": "app.user",
+    "pk": 3,
+    "fields": {
+        "first_name": "John",
+        "last_name": "Lenon",
+        "leader": 0,
+        "email": "a"
+    }
+},
+{
+    "model": "app.user",
+    "pk": 4,
+    "fields": {
+        "first_name": "Ringo",
+        "last_name": "Star",
+        "leader": 0,
+        "email": "a"
+    }
+},
+{
+    "model": "app.user",
+    "pk": 5,
+    "fields": {
+        "first_name": "George",
+        "last_name": "Harrison",
+        "leader": 0,
+        "email": "a"
+    }
+},
+{
+    "model": "app.weight",
+    "pk": 3,
+    "fields": {
+        "weight": 9,
+        "user": 2,
+        "criteria": 1
+    }
+},
+{
+    "model": "app.weight",
+    "pk": 4,
+    "fields": {
+        "weight": 5,
+        "user": 2,
+        "criteria": 2
+    }
+},
+{
+    "model": "app.weight",
+    "pk": 5,
+    "fields": {
+        "weight": 7,
+        "user": 3,
+        "criteria": 2
+    }
+},
+{
+    "model": "app.weight",
+    "pk": 6,
+    "fields": {
+        "weight": 5,
+        "user": 3,
+        "criteria": 1
+    }
+},
+{
+    "model": "app.weight",
+    "pk": 7,
+    "fields": {
+        "weight": 9,
+        "user": 4,
+        "criteria": 2
+    }
+},
+{
+    "model": "app.weight",
+    "pk": 8,
+    "fields": {
+        "weight": 2,
+        "user": 4,
+        "criteria": 1
+    }
+},
+{
+    "model": "app.weight",
+    "pk": 9,
+    "fields": {
+        "weight": 4,
+        "user": 5,
+        "criteria": 2
+    }
+},
+{
+    "model": "app.weight",
+    "pk": 10,
+    "fields": {
+        "weight": 7,
+        "user": 5,
+        "criteria": 1
+    }
+},
+{
+    "model": "app.answer",
+    "pk": 5,
+    "fields": {
+        "magnitude": 8,
+        "criteria": 1,
+        "option": 1,
+        "user": 2
+    }
+},
+{
+    "model": "app.answer",
+    "pk": 6,
+    "fields": {
+        "magnitude": 6,
+        "criteria": 2,
+        "option": 1,
+        "user": 2
+    }
+},
+{
+    "model": "app.answer",
+    "pk": 7,
+    "fields": {
+        "magnitude": 9,
+        "criteria": 1,
+        "option": 2,
+        "user": 2
+    }
+},
+{
+    "model": "app.answer",
+    "pk": 8,
+    "fields": {
+        "magnitude": 6,
+        "criteria": 2,
+        "option": 2,
+        "user": 2
+    }
+},
+{
+    "model": "app.answer",
+    "pk": 9,
+    "fields": {
+        "magnitude": 4,
+        "criteria": 2,
+        "option": 2,
+        "user": 3
+    }
+},
+{
+    "model": "app.answer",
+    "pk": 10,
+    "fields": {
+        "magnitude": 8,
+        "criteria": 1,
+        "option": 2,
+        "user": 3
+    }
+},
+{
+    "model": "app.answer",
+    "pk": 11,
+    "fields": {
+        "magnitude": 7,
+        "criteria": 2,
+        "option": 1,
+        "user": 3
+    }
+},
+{
+    "model": "app.answer",
+    "pk": 12,
+    "fields": {
+        "magnitude": 10,
+        "criteria": 1,
+        "option": 1,
+        "user": 3
+    }
+},
+{
+    "model": "app.answer",
+    "pk": 13,
+    "fields": {
+        "magnitude": 8,
+        "criteria": 2,
+        "option": 2,
+        "user": 4
+    }
+},
+{
+    "model": "app.answer",
+    "pk": 14,
+    "fields": {
+        "magnitude": 5,
+        "criteria": 1,
+        "option": 2,
+        "user": 4
+    }
+},
+{
+    "model": "app.answer",
+    "pk": 15,
+    "fields": {
+        "magnitude": 3,
+        "criteria": 2,
+        "option": 1,
+        "user": 4
+    }
+},
+{
+    "model": "app.answer",
+    "pk": 16,
+    "fields": {
+        "magnitude": 5,
+        "criteria": 1,
+        "option": 1,
+        "user": 4
+    }
+},
+{
+    "model": "app.answer",
+    "pk": 17,
+    "fields": {
+        "magnitude": 5,
+        "criteria": 2,
+        "option": 2,
+        "user": 5
+    }
+},
+{
+    "model": "app.answer",
+    "pk": 18,
+    "fields": {
+        "magnitude": 1,
+        "criteria": 1,
+        "option": 2,
+        "user": 5
+    }
+},
+{
+    "model": "app.answer",
+    "pk": 19,
+    "fields": {
+        "magnitude": 5,
+        "criteria": 2,
+        "option": 1,
+        "user": 5
+    }
+},
+{
+    "model": "app.answer",
+    "pk": 20,
+    "fields": {
+        "magnitude": 10,
+        "criteria": 1,
+        "option": 1,
+        "user": 5
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 1,
+    "fields": {
+        "name": "Can add log entry",
+        "content_type": 1,
+        "codename": "add_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 2,
+    "fields": {
+        "name": "Can change log entry",
+        "content_type": 1,
+        "codename": "change_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 3,
+    "fields": {
+        "name": "Can delete log entry",
+        "content_type": 1,
+        "codename": "delete_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 4,
+    "fields": {
+        "name": "Can add group",
+        "content_type": 2,
+        "codename": "add_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 5,
+    "fields": {
+        "name": "Can change group",
+        "content_type": 2,
+        "codename": "change_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 6,
+    "fields": {
+        "name": "Can delete group",
+        "content_type": 2,
+        "codename": "delete_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 7,
+    "fields": {
+        "name": "Can add permission",
+        "content_type": 3,
+        "codename": "add_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 8,
+    "fields": {
+        "name": "Can change permission",
+        "content_type": 3,
+        "codename": "change_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 9,
+    "fields": {
+        "name": "Can delete permission",
+        "content_type": 3,
+        "codename": "delete_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 10,
+    "fields": {
+        "name": "Can add user",
+        "content_type": 4,
+        "codename": "add_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 11,
+    "fields": {
+        "name": "Can change user",
+        "content_type": 4,
+        "codename": "change_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 12,
+    "fields": {
+        "name": "Can delete user",
+        "content_type": 4,
+        "codename": "delete_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 13,
+    "fields": {
+        "name": "Can add content type",
+        "content_type": 5,
+        "codename": "add_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 14,
+    "fields": {
+        "name": "Can change content type",
+        "content_type": 5,
+        "codename": "change_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 15,
+    "fields": {
+        "name": "Can delete content type",
+        "content_type": 5,
+        "codename": "delete_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 16,
+    "fields": {
+        "name": "Can add session",
+        "content_type": 6,
+        "codename": "add_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 17,
+    "fields": {
+        "name": "Can change session",
+        "content_type": 6,
+        "codename": "change_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 18,
+    "fields": {
+        "name": "Can delete session",
+        "content_type": 6,
+        "codename": "delete_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 19,
+    "fields": {
+        "name": "Can add user",
+        "content_type": 7,
+        "codename": "add_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 20,
+    "fields": {
+        "name": "Can change user",
+        "content_type": 7,
+        "codename": "change_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 21,
+    "fields": {
+        "name": "Can delete user",
+        "content_type": 7,
+        "codename": "delete_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 22,
+    "fields": {
+        "name": "Can add criteria",
+        "content_type": 8,
+        "codename": "add_criteria"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 23,
+    "fields": {
+        "name": "Can change criteria",
+        "content_type": 8,
+        "codename": "change_criteria"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 24,
+    "fields": {
+        "name": "Can delete criteria",
+        "content_type": 8,
+        "codename": "delete_criteria"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 25,
+    "fields": {
+        "name": "Can add option",
+        "content_type": 9,
+        "codename": "add_option"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 26,
+    "fields": {
+        "name": "Can change option",
+        "content_type": 9,
+        "codename": "change_option"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 27,
+    "fields": {
+        "name": "Can delete option",
+        "content_type": 9,
+        "codename": "delete_option"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 28,
+    "fields": {
+        "name": "Can add answer",
+        "content_type": 10,
+        "codename": "add_answer"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 29,
+    "fields": {
+        "name": "Can change answer",
+        "content_type": 10,
+        "codename": "change_answer"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 30,
+    "fields": {
+        "name": "Can delete answer",
+        "content_type": 10,
+        "codename": "delete_answer"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 31,
+    "fields": {
+        "name": "Can add decision",
+        "content_type": 11,
+        "codename": "add_decision"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 32,
+    "fields": {
+        "name": "Can change decision",
+        "content_type": 11,
+        "codename": "change_decision"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 33,
+    "fields": {
+        "name": "Can delete decision",
+        "content_type": 11,
+        "codename": "delete_decision"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 34,
+    "fields": {
+        "name": "Can add weight",
+        "content_type": 12,
+        "codename": "add_weight"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 35,
+    "fields": {
+        "name": "Can change weight",
+        "content_type": 12,
+        "codename": "change_weight"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 36,
+    "fields": {
+        "name": "Can delete weight",
+        "content_type": 12,
+        "codename": "delete_weight"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 37,
+    "fields": {
+        "name": "Can add user",
+        "content_type": 13,
+        "codename": "add_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 38,
+    "fields": {
+        "name": "Can change user",
+        "content_type": 13,
+        "codename": "change_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 39,
+    "fields": {
+        "name": "Can delete user",
+        "content_type": 13,
+        "codename": "delete_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 40,
+    "fields": {
+        "name": "Can add answer",
+        "content_type": 14,
+        "codename": "add_answer"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 41,
+    "fields": {
+        "name": "Can change answer",
+        "content_type": 14,
+        "codename": "change_answer"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 42,
+    "fields": {
+        "name": "Can delete answer",
+        "content_type": 14,
+        "codename": "delete_answer"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 43,
+    "fields": {
+        "name": "Can add weight",
+        "content_type": 15,
+        "codename": "add_weight"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 44,
+    "fields": {
+        "name": "Can change weight",
+        "content_type": 15,
+        "codename": "change_weight"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 45,
+    "fields": {
+        "name": "Can delete weight",
+        "content_type": 15,
+        "codename": "delete_weight"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 46,
+    "fields": {
+        "name": "Can add decision",
+        "content_type": 16,
+        "codename": "add_decision"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 47,
+    "fields": {
+        "name": "Can change decision",
+        "content_type": 16,
+        "codename": "change_decision"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 48,
+    "fields": {
+        "name": "Can delete decision",
+        "content_type": 16,
+        "codename": "delete_decision"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 49,
+    "fields": {
+        "name": "Can add option",
+        "content_type": 17,
+        "codename": "add_option"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 50,
+    "fields": {
+        "name": "Can change option",
+        "content_type": 17,
+        "codename": "change_option"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 51,
+    "fields": {
+        "name": "Can delete option",
+        "content_type": 17,
+        "codename": "delete_option"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 52,
+    "fields": {
+        "name": "Can add criteria",
+        "content_type": 18,
+        "codename": "add_criteria"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 53,
+    "fields": {
+        "name": "Can change criteria",
+        "content_type": 18,
+        "codename": "change_criteria"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 54,
+    "fields": {
+        "name": "Can delete criteria",
+        "content_type": 18,
+        "codename": "delete_criteria"
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$36000$9uQYxbBsNQoQ$HCkSQMASsmaLd0g0cde5+KgWwoBEMbjkvsZ7Fv4ZNL4=",
+        "last_login": "2017-11-13T17:45:30.110Z",
+        "is_superuser": true,
+        "username": "jalo",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2017-11-13T17:45:12.616Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 2,
+    "fields": {
+        "password": "pbkdf2_sha256$36000$gMD7zHqxkbbi$HH2iRPKjWY8em6xKSQ8s+U101bmr4ET9eI91IPhnY24=",
+        "last_login": "2017-11-24T17:27:38.240Z",
+        "is_superuser": true,
+        "username": "jalo1412",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2017-11-18T13:12:52.197Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 1,
+    "fields": {
+        "action_time": "2017-11-24T17:40:58.538Z",
+        "user": 2,
+        "content_type": 7,
+        "object_id": "1",
+        "object_repr": "User object",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 2,
+    "fields": {
+        "action_time": "2017-11-24T17:41:11.753Z",
+        "user": 2,
+        "content_type": 7,
+        "object_id": "1",
+        "object_repr": "User object",
+        "action_flag": 2,
+        "change_message": "[]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 3,
+    "fields": {
+        "action_time": "2017-11-24T17:41:44.481Z",
+        "user": 2,
+        "content_type": 7,
+        "object_id": "2",
+        "object_repr": "User object",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 4,
+    "fields": {
+        "action_time": "2017-11-24T17:42:41.751Z",
+        "user": 2,
+        "content_type": 11,
+        "object_id": "1",
+        "object_repr": "Decision object",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 5,
+    "fields": {
+        "action_time": "2017-11-24T17:43:09.860Z",
+        "user": 2,
+        "content_type": 9,
+        "object_id": "1",
+        "object_repr": "Option object",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 6,
+    "fields": {
+        "action_time": "2017-11-24T17:43:17.871Z",
+        "user": 2,
+        "content_type": 9,
+        "object_id": "1",
+        "object_repr": "Option object",
+        "action_flag": 2,
+        "change_message": "[]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 7,
+    "fields": {
+        "action_time": "2017-11-24T17:43:42.103Z",
+        "user": 2,
+        "content_type": 9,
+        "object_id": "2",
+        "object_repr": "Option object",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 8,
+    "fields": {
+        "action_time": "2017-11-24T17:45:10.983Z",
+        "user": 2,
+        "content_type": 8,
+        "object_id": "1",
+        "object_repr": "Criteria object",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 9,
+    "fields": {
+        "action_time": "2017-11-24T17:45:20.095Z",
+        "user": 2,
+        "content_type": 8,
+        "object_id": "2",
+        "object_repr": "Criteria object",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 10,
+    "fields": {
+        "action_time": "2017-11-24T17:45:25.141Z",
+        "user": 2,
+        "content_type": 8,
+        "object_id": "2",
+        "object_repr": "Criteria object",
+        "action_flag": 2,
+        "change_message": "[]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 11,
+    "fields": {
+        "action_time": "2017-11-24T18:03:18.312Z",
+        "user": 2,
+        "content_type": 10,
+        "object_id": "1",
+        "object_repr": "Answer object",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 12,
+    "fields": {
+        "action_time": "2017-11-24T18:12:55.496Z",
+        "user": 2,
+        "content_type": 12,
+        "object_id": "1",
+        "object_repr": "5 John Coolness of the country",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 13,
+    "fields": {
+        "action_time": "2017-11-24T18:13:05.080Z",
+        "user": 2,
+        "content_type": 12,
+        "object_id": "2",
+        "object_repr": "7 John Costs",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 14,
+    "fields": {
+        "action_time": "2017-11-24T18:13:15.260Z",
+        "user": 2,
+        "content_type": 12,
+        "object_id": "3",
+        "object_repr": "9 Paul Coolness of the country",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 15,
+    "fields": {
+        "action_time": "2017-11-24T18:13:22.887Z",
+        "user": 2,
+        "content_type": 12,
+        "object_id": "4",
+        "object_repr": "5 Paul Costs",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 16,
+    "fields": {
+        "action_time": "2017-11-24T18:14:42.096Z",
+        "user": 2,
+        "content_type": 10,
+        "object_id": "2",
+        "object_repr": "7 Costs USA John",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 17,
+    "fields": {
+        "action_time": "2017-11-24T18:14:54.337Z",
+        "user": 2,
+        "content_type": 10,
+        "object_id": "3",
+        "object_repr": "8 Coolness of the country Germany John",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 18,
+    "fields": {
+        "action_time": "2017-11-24T18:15:06.212Z",
+        "user": 2,
+        "content_type": 10,
+        "object_id": "4",
+        "object_repr": "4 Costs Germany John",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 19,
+    "fields": {
+        "action_time": "2017-11-24T18:15:18.557Z",
+        "user": 2,
+        "content_type": 10,
+        "object_id": "5",
+        "object_repr": "8 Coolness of the country USA Paul",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 20,
+    "fields": {
+        "action_time": "2017-11-24T18:15:30.683Z",
+        "user": 2,
+        "content_type": 10,
+        "object_id": "6",
+        "object_repr": "6 Costs USA Paul",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 21,
+    "fields": {
+        "action_time": "2017-11-24T18:15:43.026Z",
+        "user": 2,
+        "content_type": 10,
+        "object_id": "7",
+        "object_repr": "9 Coolness of the country Germany Paul",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 22,
+    "fields": {
+        "action_time": "2017-11-24T18:15:54.410Z",
+        "user": 2,
+        "content_type": 10,
+        "object_id": "8",
+        "object_repr": "6 Costs Germany Paul",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 23,
+    "fields": {
+        "action_time": "2017-11-25T23:16:48.579Z",
+        "user": 2,
+        "content_type": 7,
+        "object_id": "1",
+        "object_repr": "John",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"leader\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 24,
+    "fields": {
+        "action_time": "2017-11-25T23:22:10.022Z",
+        "user": 2,
+        "content_type": 7,
+        "object_id": "1",
+        "object_repr": "John",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 25,
+    "fields": {
+        "action_time": "2017-11-25T23:26:38.469Z",
+        "user": 2,
+        "content_type": 7,
+        "object_id": "2",
+        "object_repr": "Paul",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"leader\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 26,
+    "fields": {
+        "action_time": "2017-11-25T23:26:51.382Z",
+        "user": 2,
+        "content_type": 7,
+        "object_id": "3",
+        "object_repr": "John",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 27,
+    "fields": {
+        "action_time": "2017-11-25T23:27:26.198Z",
+        "user": 2,
+        "content_type": 12,
+        "object_id": "5",
+        "object_repr": "7 John Costs",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 28,
+    "fields": {
+        "action_time": "2017-11-25T23:27:38.441Z",
+        "user": 2,
+        "content_type": 12,
+        "object_id": "6",
+        "object_repr": "5 John Coolness of the country",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 29,
+    "fields": {
+        "action_time": "2017-11-25T23:28:09.658Z",
+        "user": 2,
+        "content_type": 10,
+        "object_id": "9",
+        "object_repr": "4 Costs Germany John",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 30,
+    "fields": {
+        "action_time": "2017-11-25T23:28:59.684Z",
+        "user": 2,
+        "content_type": 10,
+        "object_id": "10",
+        "object_repr": "8 Coolness of the country Germany John",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 31,
+    "fields": {
+        "action_time": "2017-11-25T23:29:20.985Z",
+        "user": 2,
+        "content_type": 10,
+        "object_id": "11",
+        "object_repr": "7 Costs USA John",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 32,
+    "fields": {
+        "action_time": "2017-11-25T23:30:47.770Z",
+        "user": 2,
+        "content_type": 10,
+        "object_id": "12",
+        "object_repr": "10 Coolness of the country USA John",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 33,
+    "fields": {
+        "action_time": "2017-11-25T23:51:05.399Z",
+        "user": 2,
+        "content_type": 7,
+        "object_id": "4",
+        "object_repr": "RIngo",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 34,
+    "fields": {
+        "action_time": "2017-11-25T23:51:26.420Z",
+        "user": 2,
+        "content_type": 12,
+        "object_id": "7",
+        "object_repr": "9 RIngo Costs",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 35,
+    "fields": {
+        "action_time": "2017-11-25T23:51:38.482Z",
+        "user": 2,
+        "content_type": 12,
+        "object_id": "8",
+        "object_repr": "2 RIngo Coolness of the country",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 36,
+    "fields": {
+        "action_time": "2017-11-25T23:52:24.906Z",
+        "user": 2,
+        "content_type": 10,
+        "object_id": "13",
+        "object_repr": "8 Costs Germany RIngo",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 37,
+    "fields": {
+        "action_time": "2017-11-25T23:52:36.367Z",
+        "user": 2,
+        "content_type": 10,
+        "object_id": "14",
+        "object_repr": "5 Coolness of the country Germany RIngo",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 38,
+    "fields": {
+        "action_time": "2017-11-25T23:52:47.514Z",
+        "user": 2,
+        "content_type": 10,
+        "object_id": "15",
+        "object_repr": "3 Costs USA RIngo",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 39,
+    "fields": {
+        "action_time": "2017-11-25T23:53:02.696Z",
+        "user": 2,
+        "content_type": 10,
+        "object_id": "16",
+        "object_repr": "5 Coolness of the country USA RIngo",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 40,
+    "fields": {
+        "action_time": "2017-11-25T23:54:32.449Z",
+        "user": 2,
+        "content_type": 7,
+        "object_id": "4",
+        "object_repr": "Ringo",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"first_name\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 41,
+    "fields": {
+        "action_time": "2017-11-26T18:29:41.370Z",
+        "user": 2,
+        "content_type": 7,
+        "object_id": "5",
+        "object_repr": "George",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 42,
+    "fields": {
+        "action_time": "2017-11-26T18:30:05.913Z",
+        "user": 2,
+        "content_type": 12,
+        "object_id": "9",
+        "object_repr": "4 George Costs",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 43,
+    "fields": {
+        "action_time": "2017-11-26T18:30:19.629Z",
+        "user": 2,
+        "content_type": 12,
+        "object_id": "10",
+        "object_repr": "7 George Coolness of the country",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 44,
+    "fields": {
+        "action_time": "2017-11-26T18:30:44.056Z",
+        "user": 2,
+        "content_type": 10,
+        "object_id": "17",
+        "object_repr": "5 Costs Germany George",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 45,
+    "fields": {
+        "action_time": "2017-11-26T18:31:02.908Z",
+        "user": 2,
+        "content_type": 10,
+        "object_id": "18",
+        "object_repr": "1 Coolness of the country Germany George",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 46,
+    "fields": {
+        "action_time": "2017-11-26T18:31:14.790Z",
+        "user": 2,
+        "content_type": 10,
+        "object_id": "19",
+        "object_repr": "5 Costs USA George",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 47,
+    "fields": {
+        "action_time": "2017-11-26T18:31:30.027Z",
+        "user": 2,
+        "content_type": 10,
+        "object_id": "20",
+        "object_repr": "10 Coolness of the country USA George",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 48,
+    "fields": {
+        "action_time": "2017-11-26T18:33:12.574Z",
+        "user": 2,
+        "content_type": 11,
+        "object_id": "1",
+        "object_repr": "Choosing a Concert",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"description\"]}}]"
+    }
+}
+]

@@ -1,0 +1,40 @@
+<html>
+
+<head>
+  <title>Django Test </title>
+</head>
+
+<body>
+  <div>
+    <h1><a href="/">Django Test</a></h1>
+  </div>
+  {% for result in l %} {{ result }} {% endfor %}
+  </br>
+  -----
+  </br>
+  No weights individual_results: {{ individual_results }}
+  </br>
+  -----
+  </br>
+  No weights group_result: {{ group_result }}
+  </br>
+  -----
+  </br>
+  with weights: {{ individual_results_with_weight }}
+  </br>
+  -----
+  </br>
+  weights group_result: {{ group_result_with_weight }}
+  </br>
+  -----
+  </br>
+  Leader weights: {{ individual_results_with_leaders_weight }}
+  </br>
+  -----
+  </br>
+  Leader weights group_result: {{ group_result_with_leaders_weight }}
+  </br>
+  ----
+</body>
+
+</html>
