@@ -170,6 +170,18 @@ body {
     background-color: white;
     border-radius: 4px;
 }
+.input-group-wide {
+    width: 90%;
+    background-color: white;
+    border-radius: 4px;
+}
+
+input.carl{
+    background-color:transparent !important;
+    border:none !important;
+    border-bottom:2px solid rgb(255, 255, 255);
+
+}
 
 .list-group-horizontal{
     display: inline-flex;
