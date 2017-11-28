@@ -6,13 +6,10 @@
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
           integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"
-            integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
             crossorigin="anonymous"></script>
 
-    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"
-            integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
-            crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"
             integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
             crossorigin="anonymous"></script>
@@ -35,19 +32,36 @@
 <header>
     <div id="header-div">
         Decision Maker
-        <div id="header-tools" class="btn-group-vertical">
-            <button type="button" class="btn" id="new-survey-btn">Create new survey</button>
             <div id="social-networks" class=" btn-group">
                 <a href="#" class="fa fa-facebook"></a>
                 <a href="#" class="fa fa-twitter"></a>
                 <a href="#" class="fa fa-google"></a>
                 <a href="#" class="fa fa-linkedin"></a>
             </div>
-        </div>
     </div>
 </header>
 {% block content %}
 {% endblock %}
+<footer>
+    <div id="team-members" class="row">
+        <div class="team-member">
+            <a href="#"><i class="fa fa-user"></i></a>
+            <label>Ivan Prymak</label>
+        </div>
+        <div class="team-member">
+            <a href="#"><i class="fa fa-user"></i></a>
+            <label>Milena Malysheva</label>
+        </div>
+        <div class="team-member">
+            <a href="#"><i class="fa fa-user"></i></a>
+            <label>Carl Stermann-Lücke</label>
+        </div>
+        <div class="team-member">
+            <a href="#"><i class="fa fa-user"></i></a>
+            <label>Javier Cerna</label>
+        </div>
+    </div>
+</footer>
 
 </body>
 </html>

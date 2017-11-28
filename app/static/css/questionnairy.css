@@ -6,15 +6,17 @@
 
 body {
     background-color: rgb(46, 56, 64);
+    padding-bottom: 60px;
 }
 
 #header-div {
     font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
     font-size: 40pt;
     color: aliceblue;
+    padding-top: 10px;
 }
 
-#header-tools {
+#social-networks {
     margin-top: 20px;
     float: right;
 }
@@ -30,24 +32,16 @@ body {
     max-width: 80%;
 }
 
-#new-survey-btn {
-    background-color: rgb(0, 128, 128);
-    border-radius: 5px;
-    color: white;
-    width: 300px;
-    height: 40px;
-}
-
 
 #social-networks .fa {
     font-size: 30px;
-    width: calc(100%/4);
+    width: 50px;
     height: 40px;
     text-align: center;
     text-decoration: none;
     margin: 10px 2px;
     border-radius: 5px;
-    background-color: rgb(0, 128, 128);
+    /*background-color: rgb(0, 128, 128);*/
     color: white;
     padding: 4px
 }
@@ -56,6 +50,46 @@ body {
     opacity: 0.7;
 }
 
+footer {
+    margin: 10px auto 0 auto;
+    height: 60px;
+    text-align: center;
+    bottom:0;
+    position: fixed;
+    background-color: rgb(46, 56, 64);
+    border-top: solid rgb(0, 128, 128);
+    left: 0;
+    right: 0;
+}
+
+.fa-user {
+    border-radius: 50%;
+    color: rgb(0, 128, 128);
+    background-color: aliceblue;
+    font-size: larger;
+    padding: 5px;
+    width: 30px;
+    height: 30px;
+}
+
+#team-members{
+    margin-top: 15px;
+    display: flex;
+}
+
+.team-member{
+    flex: 1;
+    color: aliceblue;
+    font-size: 15px;
+}
+
+.team-member >label {
+    margin-left: 10px;
+}
+
+.ranged-value{
+    z-index: -1 !important;
+}
 /**/
 /**/
 /*RESULT PAGE*/
@@ -66,44 +100,46 @@ body {
     max-width: 80%;
     min-width: 80%;
 }
-#result-block{
+
+#result-block {
     display: flex;
     align-items: center;
 }
 
-#result-block>div{
+#result-block > div {
     flex: 1;
 }
 
-#result-block>div:first-child{
+#result-block > div:first-child {
     border-right: 2px white solid;
 }
 
-#right-option-content, #left-option-content{
+#right-option-content, #left-option-content {
     max-width: 90%;
     min-width: 90%;
     margin-top: 15px;
 }
 
-#right-option-content{
+#right-option-content {
     float: right;
 }
 
-#left-option-content{
+#left-option-content {
     float: left;
 }
 
-.option-text{
+.option-text {
     border-radius: 10px;
     border: 2px white solid;
     color: aliceblue;
-    font-size: 25pt;
+    font-size: 20pt;
 }
-.option-text>p{
+
+.option-text > p {
     margin: 20px;
 }
 
-#result-question{
+#result-question {
     border-radius: 15px;
     border: 2px white solid;
     color: aliceblue;
@@ -111,23 +147,27 @@ body {
     text-align: center;
     margin-bottom: 20px;
 }
-#result-question>p{
+
+#result-question > p {
     max-width: 60%;
     min-width: 60%;
     margin: auto;
 }
-#predefined-weight-result-btn, #mean-weight-result-btn{
+
+#predefined-weight-result-btn, #mean-weight-result-btn {
     width: 100%;
     color: aliceblue;
-    font-size: 25pt;
+    font-size: 20pt;
     margin-top: 20px;
     padding: 5%;
     border-radius: 15px;
 }
-#predefined-weight-result-btn{
+
+#predefined-weight-result-btn {
     background-color: rgb(0, 128, 128);
 }
-#mean-weight-result-btn{
+
+#mean-weight-result-btn {
     background-color: lightgrey;
 }
 
@@ -140,6 +180,7 @@ body {
 .card {
     width: 100%;
     background-color: rgb(0, 128, 128);
+    border-radius: 0 ;
 }
 
 .card-block {
@@ -171,7 +212,7 @@ body {
     border-radius: 4px;
 }
 
-.list-group-horizontal{
+.list-group-horizontal {
     display: inline-flex;
     width: 100%;
 }
@@ -198,6 +239,7 @@ body {
     margin-right: 15px;
     font-size: 15pt;
 }
+
 #submit-survey-btn {
     background-color: rgb(0, 128, 128);
     border-radius: 5px;
@@ -207,4 +249,5 @@ body {
     margin-left: auto;
     margin-top: 30px;
     height: 40px;
+    font-size: 15pt;
 }

@@ -5,17 +5,19 @@ body {
 
 #welcome-content{
     width: 100%;
-    text-align: center;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    position: fixed;
+    justify-content: center;
 }
 
 #new-survey-btn {
     border-radius: 8px;
-    color: black;
-    background-color: transparent;
-    font-size: 40px;
-    border: 2px black outset;
-    margin-top: 20px;
-    position: absolute;
+    background-color: rgb(0, 128, 128);
+    font-size: 50px;
+    color: aliceblue;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.6), 0 12px 40px 0 rgba(0, 0, 0, 0.6);
 }
 
 #new-survey-btn:active,
@@ -38,9 +40,45 @@ body {
     margin: 20px;
     border-radius: 5px;
     background-color: transparent;
-    color: black;
+    color: rgb(0, 128, 128);;
 }
 
 .fa:hover {
     opacity: 0.7;
+}
+
+footer {
+    margin: 10px auto 0 auto;
+    height: 60px;
+    text-align: center;
+    bottom:0;
+    position: fixed;
+    background-color: rgb(0, 128, 128);
+    left: 0;
+    right: 0;
+}
+
+.fa-user {
+    border-radius: 50%;
+    color: rgb(0, 128, 128);
+    background-color: aliceblue;
+    font-size: larger;
+    padding: 5px;
+    width: 30px;
+    height: 30px;
+}
+
+#team-members{
+    margin-top: 15px;
+    display: flex;
+}
+
+.team-member{
+    flex: 1;
+    color: aliceblue;
+    font-size: 15px;
+}
+
+.team-member >label {
+    margin-left: 10px;
 }

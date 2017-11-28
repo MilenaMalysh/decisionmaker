@@ -13,6 +13,9 @@ $(".ranged-value").on("input", function () {
     }else{
         this.value = '';
     }
+    var e = document.createEvent('HTMLEvents');
+    e.initEvent('input', true, true);
+    this.dispatchEvent(e);
 });
 
 $(".ranged-value").keydown(function (e) {

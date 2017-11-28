@@ -10,3 +10,6 @@ def questionnairy_page(request):
 
 def welcome_page(request):
     return render(request, 'welcome.html')
+
+def result_page(request):
+    return render(request, 'result_page.html')
