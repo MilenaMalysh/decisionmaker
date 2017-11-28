@@ -1,0 +1,215 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!--<div class="centred-container">
+    <div class="questions-list" id="app">
+        <ul class="list-group">
+            <li v-for="answer in answers">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">[[ findQuestion(answer.question_id).title ]]</h4>
+                        <div class="importance">
+                            <span class="priority-label">Weight</span>
+                            <div class="input-group">
+                                <span class="input-group-addon">1</span>
+                                <input type="number" class="form-control importance-value ranged-value" min="1"
+                                       max="10" v-model="answer.weight">
+                                <span class="input-group-addon">10</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-block">
+                        <p class="card-text"> [[ findQuestion(answer.question_id).description ]]</p>
+                        <ul class="list-inline list-group-horizontal">
+                            <li class="list-group-item" v-for="option in answer.options">
+                                <div class="option">
+                                    <label>[[ findOption(option.option_id).title ]]</label>
+                                    <div class="input-group">
+                                        <span class="input-group-addon">1</span>
+                                        <input type="number" class="form-control ranged-value" min="1" max="10"
+                                               v-model="option.score">
+                                        <span class="input-group-addon">10</span>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <div class="row">
+            <button type="button" class="btn" id="submit-survey-btn" v-on:click="submitResults">Submit results
+            </button>
+        </div>
+    </div>
+</div>-->
+
+
+
+<div>
+    <div class="centred-container">
+        <div class="questions-list">
+            <ul class="list-group" id="setup">
+                <div class ="card">
+                    <div class="card-header">
+                        <h4 class="card-title">Question Setup</h4>
+                    </div>
+                    <!--<form>
+                        <div class="form-group question-setup">
+                            <label for="questionInputArea">Please enter your question here.</label>
+                            <textarea class="form-control" id="questionInputArea" rows="3"></textarea>
+                        </div>
+                    </form>-->
+                    <div class="card-body">
+                        <div class="input-group-wide">
+                            <input type="text" class="form-control carl" placeholder="Question"  v-model="question.title">
+                        </div>
+                    </div>
+                </div>
+
+                <!--<ul class="list-group questions-list">
+                    <h1>Question Setup</h1>
+                    &lt;!&ndash;<form>
+                        <div class="form-group question-setup">
+                            <label for="questionInputArea">Please enter your question here.</label>
+                            <textarea class="form-control" id="questionInputArea" rows="3"></textarea>
+                        </div>
+                    </form>&ndash;&gt;
+                    <div class="input-group">
+                        <span class="input-group-addon">1</span>
+                        <input type="number" class="form-control ranged-value" min="1" max="10"
+                               v-model="option.score">
+                        <span class="input-group-addon">10</span>
+                    </div>
+                </ul>-->
+                <br>
+                <br>
+                <div class="card">
+                    <button type="button" v-on:click="addOption" class="btn btn-primary">Add Option</button>
+                    <div class = "card-block">
+                        <li v-for="option in alternatives">
+                            <div class="card" style="width: 20rem;">
+                                <!--<img class="card-img-top" src="..." alt="Card image cap">-->
+                                <div class="card-body">
+                                    <div class="input-group-wide">
+                                        <!--<span class="input-group-addon">1</span>-->
+                                        <input type="text" class="form-control" v-model="option.title">
+                                        <!--<span class="input-group-addon">10</span>-->
+
+                                    </div>
+                                    <!--<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
+                                    <button type="button" v-on:click="removeOption(option)" class="btn btn-danger">Delete this option</button>
+                                </div>
+                            </div>
+                        </li>
+                    </div>
+
+                </div>
+                <br>
+                <br>
+                <div class="card">
+                    <button type="button" v-on:click="addCriterion" class="btn btn-primary">Add Criterion</button>
+                    <div class = "card-block">
+                        <li v-for="criterion in criteria">
+                            <div class="card" style="width: 20rem;">
+                                <!--<img class="card-img-top" src="..." alt="Card image cap">-->
+                                <div class="card-body">
+                                    <div class="input-group-wide">
+                                        <!--<span class="input-group-addon">1</span>-->
+                                        <input type="text" class="form-control" v-model="criterion.name">
+                                        <!--<span class="input-group-addon">10</span>-->
+                                    </div>
+                                    <div class="input-group">
+                                        <span class="input-group-addon">1</span>
+                                        <input type="number" class="form-control ranged-value" min="1" max="10"
+                                               v-model="criterion.weight">
+                                        <span class="input-group-addon">10</span>
+                                    </div>
+                                    <!--<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
+                                    <button type="button" v-on:click="removeCriterion(criterion)" class="btn btn-danger">Delete this criterion</button>
+                                </div>
+                            </div>
+                        </li>
+                    </div>
+
+                </div>
+            </ul>
+        </div>
+        <br>
+        <!--<div class="centred-container">
+            <form>
+                <div class="form-row">
+                    <div class="col-9">
+                        <input type="text" class="form-control" placeholder="Option">
+                    </div>
+                    <button type="button" onclick="addOption" class="btn btn-primary">Add Option</button>
+                </div>
+
+            </form>
+            <div>
+
+            </div>
+            <br>
+            <form>
+                <div class="form-row">
+                    <div class="col-9">
+                        <input type="text" class="form-control" placeholder="Criterion">
+                    </div>
+
+                    <div class="col">
+                        <input type="text" class="form-control" placeholder="Weight">
+                    </div>
+                    <button type="button" onclick="addCriterion" class="btn btn-primary">Add Criterion</button>
+                </div>
+
+            </form>
+
+        </div>-->
+        <!--<div class="centred-container">
+
+            <div class="questions-list">
+                <ul class="list-group">
+                    <li v-for="answer in answers">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title">[[ findQuestion(answer.question_id).title ]]</h4>
+                                <div class="importance">
+                                    <span class="priority-label">Weight</span>
+                                    <div class="input-group">
+                                        <span class="input-group-addon">1</span>
+                                        <input type="number" class="form-control importance-value ranged-value" min="1"
+                                               max="10" v-model="answer.weight">
+                                        <span class="input-group-addon">10</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-block">
+                                <p class="card-text"> [[ findQuestion(answer.question_id).description ]]</p>
+                                <ul class="list-inline list-group-horizontal">
+                                    <li class="list-group-item" v-for="option in answer.options">
+                                        <div class="option">
+                                            <label>[[ findOption(option.option_id).title ]]</label>
+                                            <div class="input-group">
+                                                <span class="input-group-addon">1</span>
+                                                <input type="number" class="form-control ranged-value" min="1" max="10"
+                                                       v-model="option.score">
+                                                <span class="input-group-addon">10</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <div class="row">
+                    <button type="button" class="btn" id="submit-survey-btn" v-on:click="submitResults">Submit results
+                    </button>
+                </div>
+            </div>
+        </div>-->
+
+    </div>
+</div>
+<script type="text/javascript" src="{{ static("js/setup_page.js")}}" defer></script>
+{% endblock %}
