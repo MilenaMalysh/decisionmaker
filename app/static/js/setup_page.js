@@ -9,33 +9,38 @@ var setup = new Vue({
     delimiters: ["[[", "]]"],
     methods: {
         validate(){
-            
-            titles = _.every(this.alternatives.title, function (title) {
-                            return title != '';
+            a = !(_.isEmpty(this.alternatives));
+            c = !(_.isEmpty(this.criteria));
+            alternativesDefined = _.every(this.alternatives, function (alt) {
+                            return alt.title != '';
                         });
-            names = _.every(this.criteria.name, function (name) {
-                            return name != '';
+            criteriaDefined = _.every(this.criteria, function (crit) {
+                            return (crit.name != '' && crit.description != '' && crit.weight != 0);
                         });
-            descriptions = _.every(this.criteria.description, function (description) {
-                            return description != '';
-                        });
-            weights = _.every(this.criteria.weight, function (weight) {
-                            return weight != 0;
-                        });
-            questionDefined = function(){
-                return this.question != '';
-            };
-            //console.log(this.alternatives.title);
+            //descriptions = _.every(this.criteria.description, function (description) {
+            //                return description != '';
+            //            });
+            //weights = _.every(this.criteria.weight, function (weight) {
+            //                return weight != 0;
+            //            });
+            //questionDefined = function(){
+            //    return this.question != '';
+            //};
+            questionDefined = (this.question != '');
+            //console.log(a);
+            //console.log(c);
+            //console.log(this.alternatives);
+            //console.log(this.criteria);
             //console.log(this.question);
             //console.log(titles);
             //console.log(names);
             //console.log(descriptions);
             //console.log(weights);
-            console.log(questionDefined());
-            console.log(this.question);
-            console.log((this.question != ''));
-            result = (titles && names && descriptions && weights && questionDefined());
-            console.log(result);
+            //console.log(questionDefined);
+            //console.log(this.question);
+            //console.log((this.question != ''));
+            result = (a && c && alternativesDefined && criteriaDefined && questionDefined);
+            //console.log(result);
             return result;
             //return questionDefined();
         },
