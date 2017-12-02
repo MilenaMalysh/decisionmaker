@@ -9,22 +9,35 @@ var setup = new Vue({
     delimiters: ["[[", "]]"],
     methods: {
         validate(){
+            
             titles = _.every(this.alternatives.title, function (title) {
-                            return title !== '';
+                            return title != '';
                         });
             names = _.every(this.criteria.name, function (name) {
-                            return name !== '';
+                            return name != '';
                         });
             descriptions = _.every(this.criteria.description, function (description) {
-                            return description !== '';
+                            return description != '';
                         });
             weights = _.every(this.criteria.weight, function (weight) {
-                            return weight !== 0;
+                            return weight != 0;
                         });
             questionDefined = function(){
-                this.question !== '';
+                return this.question != '';
             };
-            return titles && names && descriptions && weights && questionDefined;
+            //console.log(this.alternatives.title);
+            //console.log(this.question);
+            //console.log(titles);
+            //console.log(names);
+            //console.log(descriptions);
+            //console.log(weights);
+            console.log(questionDefined());
+            console.log(this.question);
+            console.log((this.question != ''));
+            result = (titles && names && descriptions && weights && questionDefined());
+            console.log(result);
+            return result;
+            //return questionDefined();
         },
         submit(){
             //alert('test alert');
