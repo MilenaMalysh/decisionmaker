@@ -49,7 +49,13 @@ var setup = new Vue({
             if(!(this.validate())){
                 alert('Please fill in all the fields or delete unwanted alternatives and criteria.');
             } else{
-                alert('Data submitted');//submit data
+                alert('Data submitted');
+                //submit data
+                $.ajax({
+                    type: "POST",
+                    url: '/submit_results',
+                    data: this.answers
+                });
             }
         },
         addAlternative(){
