@@ -1,6 +1,10 @@
 {% extends 'base.html' %}
 
 {% block content %}
+    <script>
+        var questions = {{ questions|safe }};
+        var options = {{ options|safe }};
+    </script>
     <div class="centred-container">
         <div class="questions-list" id="app">
             <ul class="list-group">
@@ -43,6 +47,9 @@
             </div>
         </div>
     </div>
-<script type="text/javascript" src="{{ static("js/questionnairy.js")}}" defer></script>
+
 {% endblock %}
 
+{% block scripts %}
+<script type="text/javascript" src="{{ static("js/questionnairy.js")}}" defer></script>
+    {% endblock %}

@@ -8,19 +8,19 @@ var setup = new Vue({
     },
     delimiters: ["[[", "]]"],
     methods: {
-        addAlternative: ()=> {
-            alternatives.push('');
+        addAlternative(){
+            this.alternatives.push({});
         },
-        addCriterion: ()=> {
-            criteria.push({name: '', description: '', weight: 1});
+        addCriterion(){
+            this.criteria.push({name: '', description: '', weight: 1});
         },
-        removeAlternative: (id)=> {
-            var index = this.alternatives.indexOf(id);
-            alternatives.splice(index, 1);
+        removeAlternative(index){
+            this.alternatives.splice(index, 1);
+            console.log(this);
         },
-        removeCriterion: (id)=> {
+        removeCriterion(id){
             var index = this.criteria.indexOf(id);
-            criteria.splice(index, 1);
+            this.criteria.splice(index, 1);
         }
     }
 });

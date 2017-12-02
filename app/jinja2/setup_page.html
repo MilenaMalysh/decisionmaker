@@ -49,7 +49,7 @@
 <div>
     <div class="centred-container">
         <div class="questions-list">
-            <ul class="list-group" id="setup">
+            <div class="list-group" id="setup">
                 <div class ="card">
                     <div class="card-header">
                         <h4 class="card-title">Question Setup</h4>
@@ -62,7 +62,7 @@
                     </form>-->
                     <div class="card-body">
                         <div class="input-group-wide">
-                            <input type="text" class="form-control carl" placeholder="Question"  v-model="question.title">
+                            <input type="text" class="form-control carl" placeholder="Question"  v-model="question">
                         </div>
                     </div>
                 </div>
@@ -85,23 +85,23 @@
                 <br>
                 <br>
                 <div class="card">
-                    <button type="button" v-on:click="addOption" class="btn btn-primary">Add Option</button>
+                    <button type="button" v-on:click="addAlternative" class="btn btn-primary">Add Alternative</button>
                     <div class = "card-block">
-                        <li v-for="option in alternatives">
+                        <div v-for="(alternative, index) in alternatives">
                             <div class="card" style="width: 20rem;">
                                 <!--<img class="card-img-top" src="..." alt="Card image cap">-->
                                 <div class="card-body">
                                     <div class="input-group-wide">
                                         <!--<span class="input-group-addon">1</span>-->
-                                        <input type="text" class="form-control" v-model="option.title">
+                                        <input type="text" class="form-control" v-model="alternative.title">
                                         <!--<span class="input-group-addon">10</span>-->
 
                                     </div>
                                     <!--<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
-                                    <button type="button" v-on:click="removeOption(option)" class="btn btn-danger">Delete this option</button>
+                                    <button type="button" v-on:click="removeAlternative(index)" class="btn btn-danger">Delete this alternative</button>
                                 </div>
                             </div>
-                        </li>
+                        </div>
                     </div>
 
                 </div>
@@ -110,7 +110,7 @@
                 <div class="card">
                     <button type="button" v-on:click="addCriterion" class="btn btn-primary">Add Criterion</button>
                     <div class = "card-block">
-                        <li v-for="criterion in criteria">
+                        <div v-for="criterion in criteria">
                             <div class="card" style="width: 20rem;">
                                 <!--<img class="card-img-top" src="..." alt="Card image cap">-->
                                 <div class="card-body">
@@ -129,11 +129,11 @@
                                     <button type="button" v-on:click="removeCriterion(criterion)" class="btn btn-danger">Delete this criterion</button>
                                 </div>
                             </div>
-                        </li>
+                        </div>
                     </div>
 
                 </div>
-            </ul>
+            </div>
         </div>
         <br>
         <!--<div class="centred-container">
@@ -211,5 +211,9 @@
 
     </div>
 </div>
-<script type="text/javascript" src="{{ static("js/setup_page.js")}}" defer></script>
+
 {% endblock %}
+
+{% block scripts %}
+<script type="text/javascript" src="{{ static("js/setup_page.js")}}" defer></script>
+    {% endblock %}
