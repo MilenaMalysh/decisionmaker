@@ -93,7 +93,7 @@
                                 <div class="card-body">
                                     <div class="input-group-wide">
                                         <!--<span class="input-group-addon">1</span>-->
-                                        <input type="text" class="form-control" v-model="alternative.title">
+                                        <input type="text" class="form-control" placeholder="Alternative" v-model="alternative.title">
                                         <!--<span class="input-group-addon">10</span>-->
 
                                     </div>
@@ -116,7 +116,8 @@
                                 <div class="card-body">
                                     <div class="input-group-wide">
                                         <!--<span class="input-group-addon">1</span>-->
-                                        <input type="text" class="form-control" v-model="criterion.name">
+                                        <input type="text" class="form-control" placeholder="Criterion" v-model="criterion.name">
+                                        <input type="text" class="form-control" placeholder="Please describe the criterion here" v-model="criterion.description">
                                         <!--<span class="input-group-addon">10</span>-->
                                     </div>
                                     <div class="input-group">
@@ -134,8 +135,11 @@
 
                 </div>
             </div>
+            <br>
+            <button type="button" v-on:click="submit" class="btn btn-success">Submit question to team</button>
         </div>
         <br>
+
         <!--<div class="centred-container">
             <form>
                 <div class="form-row">
@@ -210,6 +214,7 @@
         </div>-->
 
     </div>
+
 </div>
 
 {% endblock %}
