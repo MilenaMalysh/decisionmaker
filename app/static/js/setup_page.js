@@ -9,7 +9,6 @@ var setup = new Vue({
     delimiters: ["[[", "]]"],
     methods: {
         validate(){
-            console.log('aaaa');
             titles = _.every(this.alternatives.title, function (title) {
                             return title !== '';
                         });
