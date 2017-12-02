@@ -10,16 +10,16 @@ var setup = new Vue({
     methods: {
         validate(){
             console.log('aaaa');
-            titles = _.every(alternatives.title, function (title) {
+            titles = _.every(this.alternatives.title, function (title) {
                             return title !== '';
                         });
-            names = _.every(criteria.name, function (name) {
+            names = _.every(this.criteria.name, function (name) {
                             return name !== '';
                         });
-            descriptions = _.every(criteria.description, function (description) {
+            descriptions = _.every(this.criteria.description, function (description) {
                             return description !== '';
                         });
-            weights = _.every(criteria.weight, function (weight) {
+            weights = _.every(this.criteria.weight, function (weight) {
                             return weight !== 0;
                         });
             questionDefined = function(){
@@ -28,16 +28,16 @@ var setup = new Vue({
             return titles && names && descriptions && weights && questionDefined;
         },
         submit(){
-            alert('test alert');
-            if(!validate()){
+            //alert('test alert');
+            if(!(this.validate())){
                 alert('Please fill in all the fields or delete unwanted alternatives and criteria.');
             } else{
-                //submit data
+                alert('Data submitted');//submit data
             }
         },
         addAlternative(){
             this.alternatives.push({title: ''});
-            submit();
+            //this.submit();
         },
         addCriterion(){
             this.criteria.push({name: '', description: '', weight: 0});
