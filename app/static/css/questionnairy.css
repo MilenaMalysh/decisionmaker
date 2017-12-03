@@ -90,6 +90,9 @@ footer {
 .ranged-value{
     z-index: -1 !important;
 }
+.option>div>span, .importance>div>span{
+    border-color: aliceblue;
+}
 /**/
 /**/
 /*RESULT PAGE*/
