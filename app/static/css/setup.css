@@ -1,0 +1,99 @@
+.question-content {
+    width: 100%;
+    border: 1px solid white;
+    border-radius: 4px;
+    color: white;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+}
+
+.question-block {
+    background-color: transparent;
+    min-height: 60px;
+    color: white;
+    text-align: center;
+    width: 100%;
+    margin: 10px;
+    border-style: none;
+}
+
+input:focus {
+    outline: none !important;
+}
+
+.setup-block {
+    display: flex;
+    align-items: center;
+}
+
+.setup-block > div {
+    flex: 1;
+    margin-bottom: auto;
+}
+
+.setup-categories{
+    display: flex;
+}
+
+.setup-categories > div{
+    color: aliceblue;
+    text-align: center;
+    flex: 1;
+}
+
+.criteria-setup, .option-setup, .users-setup {
+    padding: 20px;
+    width: 100%;
+
+}
+
+.criteria, .criteria .input-group, .option, .users {
+    min-width: 100%;
+    min-height: 50px;
+    background-color: transparent !important;
+    margin-top: 15px;
+}
+
+.criteria *, .criteria button, .option *, .users * {
+    border-color: rgb(0, 128, 128) !important;
+}
+
+
+.criteria *, .option *, .users * {
+    color: aliceblue !important;
+}
+
+.criteria span, .option>span, .users>span{
+    width: 45px !important;
+}
+
+.criteria-description{
+    width: 100% !important;
+    margin-top: 15px;
+    height: 50px;
+}
+
+.criteria input, .option input, .users input {
+    background-color: transparent !important;
+}
+
+.criteria:not(.criteria-added) button, .criteria span, .option:not(.option-added) button, .users:not(.user-added) button{
+    background-color: rgb(0, 128, 128) !important;
+}
+
+.criteria:not(.criteria-added){
+    padding-bottom: 25px;
+}
+
+.criteria-added button, .option-added button, .user-added button{
+    background-color: #8a3e3b !important;
+}
+
+.ranged-value {
+    width: initial !important;
+    text-align: center;
+}
+hr{
+    background-color: white;
+}

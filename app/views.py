@@ -13,3 +13,6 @@ def welcome_page(request):
 
 def result_page(request):
     return render(request, 'result_page.html')
+
+def setup_page(request):
+    return render(request, "setup_page.html")

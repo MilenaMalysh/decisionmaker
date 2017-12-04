@@ -20,5 +20,7 @@ from app import views
 urlpatterns = [
     url(r'^filling', views.questionnairy_page, name='questionnairy_page'),
     url(r'^result', views.result_page, name='result'),
+    url(r'^welcome', views.welcome_page, name='welcome_page'),
+    url(r'^setup', views.setup_page, name='setup_page'),
     url(r'^', views.welcome_page, name='welcome_page'),
 ]

@@ -1,0 +1,123 @@
+{% extends "base.html" %}
+
+{% block scripts %}
+    <script type="text/javascript" src="{{ static("js/setup_page.js")}}" defer></script>
+    <link rel="stylesheet" href="{{ static("css/setup.css")}}">
+{% endblock %}
+
+{% block content %}
+    <div class="centred-container">
+        <div class="questions-list" id="setup">
+            <div class="list-group">
+                <div class="question-content">
+                    <input class="question-block" placeholder="Enter Survey Title" v-model="question">
+                </div>
+                <div class="setup-categories">
+                    <div class="criteria-setup">Criteria setup
+                        <div class="criteria">
+                            <div class="input-group">
+                                <input type="text" class="form-control criteria-title"
+                                       v-model="currentCriterion.title"
+                                       placeholder="Criterion title">
+                                <span class="input-group-btn">
+                                        <button class="btn btn-secondary" type="button"
+                                                v-on:click="addCriterion">+</button>
+                                    </span>
+                            </div>
+                            <div>
+                                <input type="text" class="form-control criteria-description"
+                                       v-model="currentCriterion.description" placeholder="Criterion description">
+                                <div class="criteria-weight input-group">
+                                    <span class="input-group-addon">1</span>
+                                    <input type="number" class="form-control ranged-value" min="1" max="10"
+                                           placeholder="weight" v-model="currentCriterion.weight">
+                                    <span class="input-group-addon">10</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="option-setup">Options setup
+                        <div class="input-group option">
+                            <input type="text" class="form-control option-title"
+                                   placeholder="Option title" v-model="currentAlternative.title">
+                            <span class="input-group-btn">
+                                    <button class="btn btn-secondary" type="button"
+                                            v-on:click="addAlternative">+</button>
+                                </span>
+                        </div>
+                    </div>
+                    <div class="users-setup">Users setup
+                        <div class="input-group users">
+                            <input type="email" class="form-control users-title"
+                                   placeholder="User's email" v-model="currentUser.email">
+                            <span class="input-group-btn">
+                                    <button class="btn btn-secondary" type="button" v-on:click="addUser">+</button>
+                                </span>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="setup-block">
+                    <div>
+                        <div class="criteria-setup">
+                            <div v-for="criterion in criteria">
+                                <div class="input-group criteria criteria-added">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-secondary" type="button"
+                                            v-on:click="removeCriterion(criterion)">-</button>
+                                </span>
+                                    <input type="text" class="form-control criteria-title"
+                                           v-bind:value="criterion.title"
+                                           readonly="readonly">
+                                    <input type="text" class="form-control"
+                                           v-model="criterion.description" readonly="readonly">
+                                    <input type="number" class="form-control "
+                                           v-model="criterion.weight" readonly="readonly">
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div>
+                        <div class="option-setup">
+                            <div v-for="(alternative, index) in alternatives">
+                                <div class="input-group option option-added">
+                                    <input type="text" class="form-control option-title"
+                                           v-model="alternative.title" readonly="readonly">
+                                    <span class="input-group-btn">
+                                    <button class="btn btn-secondary" type="button"
+                                            v-on:click="removeAlternative(index)">-</button>
+                                </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="users-setup">
+                            <div v-for="(user, index) in users">
+                                <div class="input-group users user-added">
+                                    <input type="text" class="form-control users-title"
+                                           v-model="user.email" readonly="readonly">
+                                    <span class="input-group-btn">
+                                    <button class="btn btn-secondary" type="button"
+                                            v-on:click="removeUser(index)">-</button>
+                                </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <button type="button" class="btn" id="submit-survey-btn" v-on:click="submit"> Submit question to team
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+
+
+{% endblock %}
