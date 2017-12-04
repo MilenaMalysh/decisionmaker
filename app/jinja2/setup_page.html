@@ -1,225 +1,123 @@
 {% extends "base.html" %}
 
-{% block content %}
-<!--<div class="centred-container">
-    <div class="questions-list" id="app">
-        <ul class="list-group">
-            <li v-for="answer in answers">
-                <div class="card">
-                    <div class="card-header">
-                        <h4 class="card-title">[[ findQuestion(answer.question_id).title ]]</h4>
-                        <div class="importance">
-                            <span class="priority-label">Weight</span>
-                            <div class="input-group">
-                                <span class="input-group-addon">1</span>
-                                <input type="number" class="form-control importance-value ranged-value" min="1"
-                                       max="10" v-model="answer.weight">
-                                <span class="input-group-addon">10</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-block">
-                        <p class="card-text"> [[ findQuestion(answer.question_id).description ]]</p>
-                        <ul class="list-inline list-group-horizontal">
-                            <li class="list-group-item" v-for="option in answer.options">
-                                <div class="option">
-                                    <label>[[ findOption(option.option_id).title ]]</label>
-                                    <div class="input-group">
-                                        <span class="input-group-addon">1</span>
-                                        <input type="number" class="form-control ranged-value" min="1" max="10"
-                                               v-model="option.score">
-                                        <span class="input-group-addon">10</span>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </li>
-        </ul>
-        <div class="row">
-            <button type="button" class="btn" id="submit-survey-btn" v-on:click="submitResults">Submit results
-            </button>
-        </div>
-    </div>
-</div>-->
-
-
-
-<div>
-    <div class="centred-container">
-        <div class="questions-list">
-            <div class="list-group" id="setup">
-                <div class ="card">
-                    <div class="card-header">
-                        <h4 class="card-title">Question Setup</h4>
-                    </div>
-                    <!--<form>
-                        <div class="form-group question-setup">
-                            <label for="questionInputArea">Please enter your question here.</label>
-                            <textarea class="form-control" id="questionInputArea" rows="3"></textarea>
-                        </div>
-                    </form>-->
-                    <div class="card-body">
-                        <div class="input-group-wide">
-                            <input type="text" class="form-control carl" placeholder="Question"  v-model="question">
-                        </div>
-                    </div>
-                </div>
-
-                <!--<ul class="list-group questions-list">
-                    <h1>Question Setup</h1>
-                    &lt;!&ndash;<form>
-                        <div class="form-group question-setup">
-                            <label for="questionInputArea">Please enter your question here.</label>
-                            <textarea class="form-control" id="questionInputArea" rows="3"></textarea>
-                        </div>
-                    </form>&ndash;&gt;
-                    <div class="input-group">
-                        <span class="input-group-addon">1</span>
-                        <input type="number" class="form-control ranged-value" min="1" max="10"
-                               v-model="option.score">
-                        <span class="input-group-addon">10</span>
-                    </div>
-                </ul>-->
-                <br>
-                <br>
-                <div class="card">
-                    <button type="button" v-on:click="addAlternative" class="btn btn-primary">Add Alternative</button>
-                    <div class = "card-block">
-                        <div v-for="(alternative, index) in alternatives">
-                            <div class="card" style="width: 20rem;">
-                                <!--<img class="card-img-top" src="..." alt="Card image cap">-->
-                                <div class="card-body">
-                                    <div class="input-group-wide">
-                                        <!--<span class="input-group-addon">1</span>-->
-                                        <input type="text" class="form-control" placeholder="Alternative" v-model="alternative.title">
-                                        <!--<span class="input-group-addon">10</span>-->
-
-                                    </div>
-                                    <!--<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
-                                    <button type="button" v-on:click="removeAlternative(index)" class="btn btn-danger">Delete this alternative</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                <br>
-                <br>
-                <div class="card">
-                    <button type="button" v-on:click="addCriterion" class="btn btn-primary">Add Criterion</button>
-                    <div class = "card-block">
-                        <div v-for="criterion in criteria">
-                            <div class="card" style="width: 20rem;">
-                                <!--<img class="card-img-top" src="..." alt="Card image cap">-->
-                                <div class="card-body">
-                                    <div class="input-group-wide">
-                                        <!--<span class="input-group-addon">1</span>-->
-                                        <input type="text" class="form-control" placeholder="Criterion" v-model="criterion.name">
-                                        <input type="text" class="form-control" placeholder="Please describe the criterion here" v-model="criterion.description">
-                                        <!--<span class="input-group-addon">10</span>-->
-                                    </div>
-                                    <div class="input-group">
-                                        <span class="input-group-addon">1</span>
-                                        <input type="number" class="form-control ranged-value" min="1" max="10"
-                                               v-model="criterion.weight">
-                                        <span class="input-group-addon">10</span>
-                                    </div>
-                                    <!--<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
-                                    <button type="button" v-on:click="removeCriterion(criterion)" class="btn btn-danger">Delete this criterion</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                <br>
-                <button type="button" v-on:click="submit" class="btn btn-success">Submit question to team</button>
-            </div>
-
-        </div>
-
-
-        <!--<div class="centred-container">
-            <form>
-                <div class="form-row">
-                    <div class="col-9">
-                        <input type="text" class="form-control" placeholder="Option">
-                    </div>
-                    <button type="button" onclick="addOption" class="btn btn-primary">Add Option</button>
-                </div>
-
-            </form>
-            <div>
-
-            </div>
-            <br>
-            <form>
-                <div class="form-row">
-                    <div class="col-9">
-                        <input type="text" class="form-control" placeholder="Criterion">
-                    </div>
-
-                    <div class="col">
-                        <input type="text" class="form-control" placeholder="Weight">
-                    </div>
-                    <button type="button" onclick="addCriterion" class="btn btn-primary">Add Criterion</button>
-                </div>
-
-            </form>
-
-        </div>-->
-        <!--<div class="centred-container">
-
-            <div class="questions-list">
-                <ul class="list-group">
-                    <li v-for="answer in answers">
-                        <div class="card">
-                            <div class="card-header">
-                                <h4 class="card-title">[[ findQuestion(answer.question_id).title ]]</h4>
-                                <div class="importance">
-                                    <span class="priority-label">Weight</span>
-                                    <div class="input-group">
-                                        <span class="input-group-addon">1</span>
-                                        <input type="number" class="form-control importance-value ranged-value" min="1"
-                                               max="10" v-model="answer.weight">
-                                        <span class="input-group-addon">10</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card-block">
-                                <p class="card-text"> [[ findQuestion(answer.question_id).description ]]</p>
-                                <ul class="list-inline list-group-horizontal">
-                                    <li class="list-group-item" v-for="option in answer.options">
-                                        <div class="option">
-                                            <label>[[ findOption(option.option_id).title ]]</label>
-                                            <div class="input-group">
-                                                <span class="input-group-addon">1</span>
-                                                <input type="number" class="form-control ranged-value" min="1" max="10"
-                                                       v-model="option.score">
-                                                <span class="input-group-addon">10</span>
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-                <div class="row">
-                    <button type="button" class="btn" id="submit-survey-btn" v-on:click="submitResults">Submit results
-                    </button>
-                </div>
-            </div>
-        </div>-->
-
-    </div>
-
-</div>
-
+{% block scripts %}
+    <script type="text/javascript" src="{{ static("js/setup_page.js")}}" defer></script>
+    <link rel="stylesheet" href="{{ static("css/setup.css")}}">
 {% endblock %}
 
-{% block scripts %}
-<script type="text/javascript" src="{{ static("js/setup_page.js")}}" defer></script>
-    {% endblock %}
+{% block content %}
+    <div class="centred-container">
+        <div class="questions-list" id="setup">
+            <div class="list-group">
+                <div class="question-content">
+                    <input class="question-block" placeholder="Enter Survey Title" v-model="question">
+                </div>
+                <div class="setup-categories">
+                    <div class="criteria-setup">Criteria setup
+                        <div class="criteria">
+                            <div class="input-group">
+                                <input type="text" class="form-control criteria-title"
+                                       v-model="currentCriterion.title"
+                                       placeholder="Criterion title">
+                                <span class="input-group-btn">
+                                        <button class="btn btn-secondary" type="button"
+                                                v-on:click="addCriterion">+</button>
+                                    </span>
+                            </div>
+                            <div>
+                                <input type="text" class="form-control criteria-description"
+                                       v-model="currentCriterion.description" placeholder="Criterion description">
+                                <div class="criteria-weight input-group">
+                                    <span class="input-group-addon">1</span>
+                                    <input type="number" class="form-control ranged-value" min="1" max="10"
+                                           placeholder="weight" v-model="currentCriterion.weight">
+                                    <span class="input-group-addon">10</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="option-setup">Options setup
+                        <div class="input-group option">
+                            <input type="text" class="form-control option-title"
+                                   placeholder="Option title" v-model="currentAlternative.title">
+                            <span class="input-group-btn">
+                                    <button class="btn btn-secondary" type="button"
+                                            v-on:click="addAlternative">+</button>
+                                </span>
+                        </div>
+                    </div>
+                    <div class="users-setup">Users setup
+                        <div class="input-group users">
+                            <input type="email" class="form-control users-title"
+                                   placeholder="User's email" v-model="currentUser.email">
+                            <span class="input-group-btn">
+                                    <button class="btn btn-secondary" type="button" v-on:click="addUser">+</button>
+                                </span>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="setup-block">
+                    <div>
+                        <div class="criteria-setup">
+                            <div v-for="criterion in criteria">
+                                <div class="input-group criteria criteria-added">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-secondary" type="button"
+                                            v-on:click="removeCriterion(criterion)">-</button>
+                                </span>
+                                    <input type="text" class="form-control criteria-title"
+                                           v-bind:value="criterion.title"
+                                           readonly="readonly">
+                                    <input type="text" class="form-control"
+                                           v-model="criterion.description" readonly="readonly">
+                                    <input type="number" class="form-control "
+                                           v-model="criterion.weight" readonly="readonly">
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div>
+                        <div class="option-setup">
+                            <div v-for="(alternative, index) in alternatives">
+                                <div class="input-group option option-added">
+                                    <input type="text" class="form-control option-title"
+                                           v-model="alternative.title" readonly="readonly">
+                                    <span class="input-group-btn">
+                                    <button class="btn btn-secondary" type="button"
+                                            v-on:click="removeAlternative(index)">-</button>
+                                </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="users-setup">
+                            <div v-for="(user, index) in users">
+                                <div class="input-group users user-added">
+                                    <input type="text" class="form-control users-title"
+                                           v-model="user.email" readonly="readonly">
+                                    <span class="input-group-btn">
+                                    <button class="btn btn-secondary" type="button"
+                                            v-on:click="removeUser(index)">-</button>
+                                </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <button type="button" class="btn" id="submit-survey-btn" v-on:click="submit"> Submit question to team
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+
+
+{% endblock %}

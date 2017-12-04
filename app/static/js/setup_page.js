@@ -3,75 +3,61 @@ var setup = new Vue({
     el: '#setup',
     data: {
         alternatives: [],
+        currentAlternative: {title: ''},
         criteria: [],
+        currentCriterion: {name: '', description: '', weight: ""},
+        users: [],
+        currentUser: {title: ''},
         question: ""
     },
     delimiters: ["[[", "]]"],
     methods: {
         validate(){
-            a = !(_.isEmpty(this.alternatives));
-            c = !(_.isEmpty(this.criteria));
-            alternativesDefined = _.every(this.alternatives, function (alt) {
-                            return alt.title != '';
-                        });
-            criteriaDefined = _.every(this.criteria, function (crit) {
-                            return (crit.name != '' && crit.description != '' && crit.weight != 0);
-                        });
-            //descriptions = _.every(this.criteria.description, function (description) {
-            //                return description != '';
-            //            });
-            //weights = _.every(this.criteria.weight, function (weight) {
-            //                return weight != 0;
-            //            });
-            //questionDefined = function(){
-            //    return this.question != '';
-            //};
-            questionDefined = (this.question != '');
-            //console.log(a);
-            //console.log(c);
-            //console.log(this.alternatives);
-            //console.log(this.criteria);
-            //console.log(this.question);
-            //console.log(titles);
-            //console.log(names);
-            //console.log(descriptions);
-            //console.log(weights);
-            //console.log(questionDefined);
-            //console.log(this.question);
-            //console.log((this.question != ''));
-            result = (a && c && alternativesDefined && criteriaDefined && questionDefined);
-            //console.log(result);
-            return result;
-            //return questionDefined();
+            return ((this.alternatives.length >= 1) && (this.criteria.length >= 1) && (this.users.length >= 1) && this.question);
         },
         submit(){
-            //alert('test alert');
             if(!(this.validate())){
-                alert('Please fill in all the fields or delete unwanted alternatives and criteria.');
+                alert('Please fill survey title and add at least one option, criterion, user.');
             } else{
-                alert('Data submitted');
                 //submit data
                 $.ajax({
                     type: "POST",
                     url: '/submit_results',
-                    data: this.answers
+                    data: {
+                        question: this.question,
+                        alternatives: this.alternatives,
+                        criteria: this.criteria,
+                        users: this.users
+                    }
                 });
             }
         },
         addAlternative(){
-            this.alternatives.push({title: ''});
-            //this.submit();
+            if (this.currentAlternative.title) {
+                this.alternatives.push(this.currentAlternative);
+                this.currentAlternative = {title: ''};
+            }
+        },
+        addUser(){
+            if (this.currentUser.email) {
+                this.users.push(this.currentUser);
+                this.currentUser = {email: ''};
+            }
         },
         addCriterion(){
-            this.criteria.push({name: '', description: '', weight: 0});
+            if (this.currentCriterion.title && this.currentCriterion.description && this.currentCriterion.weight) {
+                this.criteria.push(this.currentCriterion);
+                this.currentCriterion = {name: '', description: '', weight: ""};
+            }
         },
         removeAlternative(index){
             this.alternatives.splice(index, 1);
-            console.log(this);
         },
-        removeCriterion(id){
-            var index = this.criteria.indexOf(id);
+        removeCriterion(index){
             this.criteria.splice(index, 1);
+        },
+        removeUser(index){
+            this.users.splice(index, 1);
         }
     }
 });
