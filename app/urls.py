@@ -18,7 +18,9 @@ from django.conf.urls import url
 from app import views
 
 urlpatterns = [
-    url(r'^filling', views.questionnairy_page, name='questionnairy_page'),
+    url(r'^questionnaire/create$', views.create, name='create'),
+    url(r'^decision/(?P<decision_id>.*)/$', views.decision, name='decision'),
+    url(r'^filling/(?P<invitation_id>.*)/$', views.questionnaire_page, name='questionnaire'),
     url(r'^result', views.result_page, name='result'),
     url(r'^welcome', views.welcome_page, name='welcome_page'),
     url(r'^setup', views.setup_page, name='setup_page'),
