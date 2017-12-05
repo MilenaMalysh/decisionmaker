@@ -1,8 +1,8 @@
-from django.shortcuts import render, render_to_response
 import json
 
 from django.http import HttpResponseNotAllowed, HttpResponseBadRequest
 from django.shortcuts import render, get_object_or_404, redirect
+from django.shortcuts import render_to_response
 
 from app.emails import send_invitation
 from app.models import Decision, Option, User, Criteria, Invitation
@@ -46,6 +46,8 @@ def questionnairy_page(request):
                  {'id': 2, 'title': 'question2', 'description': 'description2'}]
     options = [{'id': 6, 'title': 'option1'}, {'id': 7, 'title': 'option2'}, {'id': 10, 'title': 'option3'}]
     return render_to_response('questionnairy.html', {'questions': questions, 'options': options})
+
+
 def decision(request, decision_id):
     decision = Decision.objects.get(id=decision_id)
     invitations = Invitation.objects.filter(decision=decision)
