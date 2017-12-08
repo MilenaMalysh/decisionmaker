@@ -7,8 +7,8 @@
     </script>
     <div class="centred-container">
         <div class="questions-list" id="app">
-            <ul class="list-group">
-                <li v-for="answer in answers">
+            <div class="list-group">
+                <div v-for="answer in answers">
                     <div class="card">
                         <div class="card-header">
                             <h4 class="card-title">[[ findQuestion(answer.question_id).title ]]</h4>
@@ -39,8 +39,8 @@
                             </ul>
                         </div>
                     </div>
-                </li>
-            </ul>
+                </div>
+            </div>
             <div class="row">
                 <button type="button" class="btn" id="submit-survey-btn" v-on:click="submitResults">Submit results
                 </button>
