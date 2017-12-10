@@ -13,7 +13,7 @@ $(".ranged-value").on("keyup", function () {
     }else{
         this.value = '';
     }
-    this.dispatchEvent(new Event('change', { 'bubbles': true }))
+    this.dispatchEvent(new Event('input', { 'bubbles': true }))
 });
 
 $(".ranged-value").keydown(function (e) {
