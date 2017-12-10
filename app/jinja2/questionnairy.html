@@ -2,6 +2,7 @@
 
 {% block content %}
     <script>
+        var invitationId = {{ invitation_id|safe }}
         var questions = {{ questions|safe }};
         var options = {{ options|safe }};
     </script>

@@ -1,5 +1,11 @@
 {% extends 'base.html' %}
 
+<script type="application/javascript">
+    var invitation_id = {{ invitation_id|safe }};
+    var group_result = {{ group_result|safe }};
+    var normal_result = {{ normal_result|safe }};
+</script>
+
 {% block content %}
     <div class="centred-container">
         <div id="survey-result-container">
