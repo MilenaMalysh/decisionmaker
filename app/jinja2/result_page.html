@@ -1,10 +1,17 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <div class="centred-container">
+    <script type="application/javascript">
+        var invitation_id = "{{ invitation_id|safe }}";
+        var decision_id = "{{ decision_id|safe }}";
+        var group_result = {{ group_result|safe }};
+        var normal_result = {{ normal_result|safe }};
+    </script>
+
+    <div class="centred-container" id="app">
         <div class="preload">
-            <img src="../static/img/loader.svg">
-            <div id="waiting" >Waiting for other users' decision...</div>
+            <img src="{{ static("img/loader.svg") }}">
+            <div id="waiting">Waiting for other users' decision...</div>
         </div>
         <div id="survey-result-container">
             <div id="result-question">
@@ -19,7 +26,7 @@
                         <div class="option-text">
                             <p>Select result computed with the weights predefined by team leader</p>
                         </div>
-                        <button type="button" class="btn" id="predefined-weight-result-btn">Option #1</button>
+                        <button type="button" class="btn" id="predefined-weight-result-btn">[[normal_result]]</button>
                     </div>
                 </div>
                 <div>
@@ -27,7 +34,7 @@
                         <div class="option-text">
                             <p>Select result computed using the mean weights entered by every team member</p>
                         </div>
-                        <button type="button" class="btn" id="mean-weight-result-btn">Option #1</button>
+                        <button type="button" class="btn" id="mean-weight-result-btn">[[group_result]]</button>
                     </div>
                 </div>
             </div>

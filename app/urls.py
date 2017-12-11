@@ -14,13 +14,18 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
 from django.conf.urls import url
+from django.views.generic import RedirectView
 
 from app import views
 
 urlpatterns = [
-    url(r'^filling', views.questionnairy_page, name='questionnairy_page'),
-    url(r'^result', views.result_page, name='result'),
-    url(r'^welcome', views.welcome_page, name='welcome_page'),
-    url(r'^setup', views.setup_page, name='setup_page'),
-    url(r'^', views.welcome_page, name='welcome_page'),
+    url(r'^decision/setup', views.setup_decision, name='decision_setup'),
+    url(r'^decision/create$', views.create, name='decision_create'),
+    url(r'^decision/(?P<decision_id>\d+)/$', views.decision, name='decision'),
+    url(r'^filling/(?P<invitation_id>\d+)/$', views.filling_page, name='filling'),
+    url(r'^submit/(?P<invitation_id>\d+)/$', views.submit, name='submit'),
+    url(r'^result/(?P<invitation_id>\d+)/$', views.result_page, name='decision_result'),
+    url(r'^decision/(?P<decision_id>\d+)/result/$', views.result_plain, name='decision_result_plain'),
+    url(r'^index/', views.landing, name='index'),
+    url(r'^', RedirectView.as_view(pattern_name='index', permanent=False)),
 ]
