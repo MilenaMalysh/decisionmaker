@@ -67,7 +67,8 @@ def filling_page(request, invitation_id):
     criteria = ({'id': criterion.id, 'title': criterion.name, 'description': criterion.description}
                 for criterion in Criteria.objects.filter(decision=invitation.decision))
     return render(request=request, template_name='questionnairy.html',
-                  context={'options': list(options), 'questions': list(criteria), 'invitation_id': invitation.id})
+                  context={'options': list(options), 'questions': list(criteria), 'invitation_id': invitation.id,
+                           'decision_title': invitation.decision.name})
 
 
 def landing(request):
@@ -91,7 +92,8 @@ def result_page(request, invitation_id):
     return render(request, 'result_page.html', {'invitation_id': invitation_id,
                                                 'decision_id': decision.id,
                                                 'group_result': "null",
-                                                'normal_result': "null"})
+                                                'normal_result': "null",
+                                                'question_title': decision.name})
 
 
 def setup_decision(request):

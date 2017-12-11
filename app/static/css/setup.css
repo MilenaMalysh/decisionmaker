@@ -112,6 +112,7 @@ hr {
     min-width: 40px;
     max-width: 40px;
     color: gray;
+    float: right;
 }
 
 .description-and-weight div {
