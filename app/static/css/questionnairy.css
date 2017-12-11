@@ -103,6 +103,7 @@ footer {
     margin-top: 140px;
     max-width: 80%;
     min-width: 80%;
+    display: none;
 }
 
 #result-block {
@@ -173,6 +174,22 @@ footer {
 
 #mean-weight-result-btn {
     background-color: lightgrey;
+}
+.preload{
+    position: fixed;
+    top: 50%;
+}
+.preload img{
+    width: 90px;
+    height: 90px;
+    margin-left: auto;
+	margin-right: auto;
+	display: block;
+}
+#waiting{
+    color: aliceblue;
+    font-size: 20pt;
+    margin-top: 20px;
 }
 
 /**/

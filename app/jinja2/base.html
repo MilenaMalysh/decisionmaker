@@ -19,6 +19,9 @@
     <script src="https://use.fontawesome.com/6ee10db360.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.0/js.cookie.js"
+            integrity="sha256-ZTMFCvouhTVozUsLgEjtZOlJY+OAiLImV1p8yoBU9OI="
+            crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{{ static("css/questionnairy.css")}}">
     {% block scripts %}
     {% endblock %}
@@ -30,12 +33,12 @@
 <header>
     <div id="header-div">
         Decision Maker
-            <div id="social-networks" class=" btn-group">
-                <a href="#" class="fa fa-facebook"></a>
-                <a href="#" class="fa fa-twitter"></a>
-                <a href="#" class="fa fa-google"></a>
-                <a href="#" class="fa fa-linkedin"></a>
-            </div>
+        <div id="social-networks" class=" btn-group">
+            <a href="#" class="fa fa-facebook"></a>
+            <a href="#" class="fa fa-twitter"></a>
+            <a href="#" class="fa fa-google"></a>
+            <a href="#" class="fa fa-linkedin"></a>
+        </div>
     </div>
 </header>
 {% block content %}

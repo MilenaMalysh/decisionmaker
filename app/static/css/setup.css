@@ -53,6 +53,7 @@ input:focus {
     min-height: 50px;
     background-color: transparent !important;
     margin-top: 15px;
+    z-index: 0;
 }
 
 .criteria *, .criteria button, .option *, .users * {

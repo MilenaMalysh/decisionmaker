@@ -18,11 +18,13 @@ from django.conf.urls import url
 from app import views
 
 urlpatterns = [
-    url(r'^questionnaire/create$', views.create, name='create'),
-    url(r'^decision/(?P<decision_id>.*)/$', views.decision, name='decision'),
-    url(r'^filling/(?P<invitation_id>.*)/$', views.questionnaire_page, name='questionnaire'),
-    url(r'^result', views.result_page, name='result'),
-    url(r'^welcome', views.welcome_page, name='welcome_page'),
-    url(r'^setup', views.setup_page, name='setup_page'),
-    url(r'^', views.welcome_page, name='welcome_page'),
+    url(r'^decision/setup', views.setup_decision, name='decision_setup'),
+    url(r'^decision/create$', views.create, name='decision_create'),
+    url(r'^decision/(?P<decision_id>\d+)/$', views.decision, name='decision'),
+    url(r'^filling/(?P<invitation_id>\d+)/$', views.filling_page, name='filling'),
+    url(r'^submit/(?P<invitation_id>\d+)/$', views.submit, name='submit'),
+    url(r'^result/(?P<invitation_id>\d+)/$', views.result_page, name='decision_result'),
+    url(r'^decision/(?P<decision_id>\d+)/result/$', views.result_plain, name='decision_result_plain'),
+    url(r'^welcome', views.landing, name='landing'),
+    url(r'^', views.landing, name='index'),
 ]
