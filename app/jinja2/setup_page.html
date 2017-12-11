@@ -1,7 +1,8 @@
 {% extends "base.html" %}
 
 {% block scripts %}
-    <script type="text/javascript" src="{{ static("js/setup_page.js")}}" defer></script>
+    <script type="text/javascript" src="{{ static("js/setup_page.js")}}" defer
+            xmlns="http://www.w3.org/1999/html"></script>
     <link rel="stylesheet" href="{{ static("css/setup.css")}}">
 {% endblock %}
 
@@ -62,18 +63,33 @@
                     <div>
                         <div class="criteria-setup">
                             <div v-for="criterion in criteria">
-                                <div class="input-group criteria criteria-added">
-                                <span class="input-group-btn">
+                                <div class="criteria criteria-added">
+                                    <div class="input-group criteria criteria-added">
+
+                                        <input type="text" class="form-control criteria-title"
+                                               v-bind:value="criterion.title"
+                                               readonly="readonly">
+                                        <span class="input-group-btn">
                                     <button class="btn btn-secondary" type="button"
                                             v-on:click="removeCriterion(criterion)">-</button>
-                                </span>
-                                    <input type="text" class="form-control criteria-title"
-                                           v-bind:value="criterion.title"
-                                           readonly="readonly">
-                                    <input type="text" class="form-control"
-                                           v-model="criterion.description" readonly="readonly">
-                                    <input type="number" class="form-control "
-                                           v-model="criterion.weight" readonly="readonly">
+                                        </span>
+
+                                    </div>
+                                    <div class="description-and-weight">
+                                        <div>
+                                            <i>asdkasjdks sdkjkhfjkas jsdjfkjks fskdjhfskj sf ksf skdfsdf sdfsdf sfsdf
+                                                sfjfdljksf</i>
+                                        </div>
+                                        <span><i>[[criterion.weight]]</i></span>
+                                    </div>
+
+                                    {#                                    <input type="text" class="form-control criteria-title"#}
+                                    {#                                           v-bind:value="criterion.title"#}
+                                    {#                                           readonly="readonly">#}
+                                    {#                                    <input type="text" class="form-control"#}
+                                    {#                                           v-model="criterion.description" readonly="readonly">#}
+                                    {#                                    <input type="number" class="form-control "#}
+                                    {#                                           v-model="criterion.weight" readonly="readonly">#}
                                 </div>
                             </div>
 
