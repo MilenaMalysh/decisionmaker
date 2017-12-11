@@ -1,6 +1,6 @@
 import json
 
-from django.http import HttpResponseNotAllowed, HttpResponseBadRequest, JsonResponse
+from django.http import HttpResponseNotAllowed, HttpResponseBadRequest, JsonResponse, Http404
 from django.shortcuts import render, get_object_or_404, redirect
 from django.shortcuts import render_to_response
 from django.urls import reverse
@@ -34,7 +34,7 @@ def create(request):
                         for criterion in criteria)
         invitations = list(Invitation.objects.create(user=user, decision=decision) for user in users)
         for invitation in invitations:
-            send_invitation(invitation)
+            send_invitation(request, invitation)
         return JsonResponse({'redirect': decision.get_absolute_url()})
     else:
         return HttpResponseNotAllowed(['POST'])
@@ -52,7 +52,7 @@ def questionnairy_page(request):
 
 
 def decision(request, decision_id):
-    decision = Decision.objects.get(id=decision_id)
+    decision = get_object_or_404(Decision, pk=decision_id)
     invitations = Invitation.objects.filter(decision=decision)
     users = ({"email": invitation.user.email, "link": invitation.get_absolute_url()} for invitation in invitations)
     return render(request=request, template_name="setup_result.html", context={"users": users})
@@ -60,6 +60,8 @@ def decision(request, decision_id):
 
 def filling_page(request, invitation_id):
     invitation = get_object_or_404(Invitation, pk=invitation_id)
+    if invitation.answered:
+        return redirect(reverse('decision_result', args=[invitation_id]))
     options = ({'id': option.id, 'title': option.name}
                for option in Option.objects.filter(decision=invitation.decision))
     criteria = ({'id': criterion.id, 'title': criterion.name, 'description': criterion.description}
@@ -72,17 +74,23 @@ def landing(request):
     return render(request, 'welcome.html')
 
 
-def result_page(request, decision_id, invitation_id):
-    decision = Decision.objects.get(id=decision_id)
+def result_page(request, invitation_id):
+    invitation = get_object_or_404(Invitation, pk=invitation_id)
+    decision = invitation.decision
     finished = all(decision.answered for decision in Invitation.objects.filter(decision=decision))
     if finished:
         group_result = group_solution(decision)
         normal_result = normal_solution(decision)
         return render(request, 'result_page.html',
                       {'invitation_id': invitation_id,
-                       'group_result': group_result.name,
-                       'normal_result': normal_result.name})
-    return render(request, 'result_page.html')
+                       'decision_id': decision.id,
+                       'group_result': "\"" + group_result.name + "\"",
+                       'normal_result': "\"" + normal_result.name + "\""})
+
+    return render(request, 'result_page.html', {'invitation_id': invitation_id,
+                                                'decision_id': decision.id,
+                                                'group_result': "null",
+                                                'normal_result': "null"})
 
 
 def setup_decision(request):
@@ -107,6 +115,16 @@ def submit(request, invitation_id):
                                               option=Option.objects.get(id=option_score['option_id']))
         invitation.answered = True
         invitation.save()
-        return JsonResponse({'redirect': reverse("decision_result", args=[invitation.decision.id])})
+        return JsonResponse({'redirect': reverse("decision_result", args=[invitation.id])})
     else:
         return HttpResponseNotAllowed(['POST'])
+
+
+def result_plain(request, decision_id):
+    decision = Decision.objects.get(id=decision_id)
+    finished = all(decision.answered for decision in Invitation.objects.filter(decision=decision))
+    if finished:
+        group_result = group_solution(decision)
+        normal_result = normal_solution(decision)
+        return JsonResponse({'group_result': group_result.name, 'normal_result': normal_result.name})
+    raise Http404()

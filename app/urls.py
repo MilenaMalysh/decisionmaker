@@ -23,7 +23,8 @@ urlpatterns = [
     url(r'^decision/(?P<decision_id>\d+)/$', views.decision, name='decision'),
     url(r'^filling/(?P<invitation_id>\d+)/$', views.filling_page, name='filling'),
     url(r'^submit/(?P<invitation_id>\d+)/$', views.submit, name='submit'),
-    url(r'^decision/(?P<decision_id>\d+)/(?P<invitation_id>\d+)/result/$', views.result_page, name='decision_result'),
+    url(r'^result/(?P<invitation_id>\d+)/$', views.result_page, name='decision_result'),
+    url(r'^decision/(?P<decision_id>\d+)/result/$', views.result_plain, name='decision_result_plain'),
     url(r'^welcome', views.landing, name='landing'),
     url(r'^', views.landing, name='index'),
 ]
