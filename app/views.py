@@ -71,7 +71,7 @@ def filling_page(request, invitation_id):
 
 
 def landing(request):
-    return render(request, 'welcome.html')
+    return render(request, 'result_page.html')
 
 
 def result_page(request, invitation_id):

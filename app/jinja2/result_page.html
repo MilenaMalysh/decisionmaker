@@ -9,12 +9,12 @@
     </script>
 
     <div class="centred-container" id="app">
-        <div class="preload">
+        <div class="preload" style="display: none">
             <img src="{{ static("img/loader.svg") }}">
             <div id="waiting">Waiting for other users' decision...</div>
         </div>
         <div id="survey-result-container">
-            <div id="result-question">
+            <div id="result-question" >
                 <p>Would you agree with result computed with the weights predefined by team leader even though it
                     differs from
                     result computed using the mean weights entered by every team member?
@@ -38,6 +38,17 @@
                     </div>
                 </div>
             </div>
+        </div>
+        <div id="final-result">
+            <div id="final-result-question">
+                <p>Where to place?
+                </p>
+            </div>
+            <div id="final-result-value">
+                <p>Your team decision is: <b>North</b>
+                </p>
+            </div>
+            <img src="../static/img/final_result.png">
         </div>
     </div>
 {% endblock %}
