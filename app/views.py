@@ -85,7 +85,8 @@ def result_page(request, invitation_id):
                       {'invitation_id': invitation_id,
                        'decision_id': decision.id,
                        'group_result': "\"" + group_result.name + "\"",
-                       'normal_result': "\"" + normal_result.name + "\""})
+                       'normal_result': "\"" + normal_result.name + "\"",
+                       'question_title': decision.name})
 
     return render(request, 'result_page.html', {'invitation_id': invitation_id,
                                                 'decision_id': decision.id,

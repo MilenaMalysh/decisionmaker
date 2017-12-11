@@ -25,7 +25,11 @@ if (group_result == null) {
     timeout = setInterval(doAjax, interval);
 } else {
     $(".preload").hide();
-    $("#survey-result-container").show();
+    if (app.$data.normal_result ==  app.$data.group_result) {
+        $("#final-result").show();
+    }else{
+        $("#survey-result-container").show();
+    }
 }
 
 
