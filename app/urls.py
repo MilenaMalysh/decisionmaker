@@ -14,6 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
 from django.conf.urls import url
+from django.views.generic import RedirectView
 
 from app import views
 
@@ -25,6 +26,6 @@ urlpatterns = [
     url(r'^submit/(?P<invitation_id>\d+)/$', views.submit, name='submit'),
     url(r'^result/(?P<invitation_id>\d+)/$', views.result_page, name='decision_result'),
     url(r'^decision/(?P<decision_id>\d+)/result/$', views.result_plain, name='decision_result_plain'),
-    url(r'^welcome', views.landing, name='landing'),
-    url(r'^', views.landing, name='index'),
+    url(r'^index/', views.landing, name='index'),
+    url(r'^', RedirectView.as_view(pattern_name='index', permanent=False)),
 ]

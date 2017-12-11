@@ -273,3 +273,7 @@ footer {
     height: 40px;
     font-size: 15pt;
 }
+
+.white-link {
+    color: white;
+}
