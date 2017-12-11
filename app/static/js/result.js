@@ -20,18 +20,6 @@ function doAjax() {
     });
 }
 
-var timeout;
-if (group_result == null) {
-    timeout = setInterval(doAjax, interval);
-} else {
-    $(".preload").hide();
-    if (app.$data.normal_result ==  app.$data.group_result) {
-        $("#final-result").show();
-    }else{
-        $("#survey-result-container").show();
-    }
-}
-
 
 const app = new Vue({
     el: '#app',
@@ -51,3 +39,15 @@ const app = new Vue({
         },
     }
 });
+
+var timeout;
+if (group_result == null) {
+    timeout = setInterval(doAjax, interval);
+} else {
+    $(".preload").hide();
+    if (app.$data.normal_result ==  app.$data.group_result) {
+        $("#final-result").show();
+    }else{
+        $("#survey-result-container").show();
+    }
+}
