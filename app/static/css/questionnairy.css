@@ -99,17 +99,11 @@ footer {
 /*RESULT PAGE*/
 /**/
 /**/
-#survey-result-container {
+#survey-result-container, #final-result {
     margin-top: 140px;
     max-width: 80%;
     min-width: 80%;
     display: none;
-}
-
-#final-result{
-    margin-top: 140px;
-    max-width: 80%;
-    min-width: 80%;
 }
 
 #result-block {
