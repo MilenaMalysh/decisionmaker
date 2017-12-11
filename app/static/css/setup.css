@@ -32,11 +32,11 @@ input:focus {
     margin-bottom: auto;
 }
 
-.setup-categories{
+.setup-categories {
     display: flex;
 }
 
-.setup-categories > div{
+.setup-categories > div {
     color: aliceblue;
     text-align: center;
     flex: 1;
@@ -59,16 +59,16 @@ input:focus {
     border-color: rgb(0, 128, 128) !important;
 }
 
-
 .criteria *, .option *, .users * {
     color: aliceblue !important;
+    z-index: 0 !important;
 }
 
-.criteria span, .option>span, .users>span{
+.criteria span, .option > span, .users > span {
     width: 45px !important;
 }
 
-.criteria-description{
+.criteria-description {
     width: 100% !important;
     margin-top: 15px;
     height: 50px;
@@ -78,15 +78,19 @@ input:focus {
     background-color: transparent !important;
 }
 
-.criteria:not(.criteria-added) button, .criteria span, .option:not(.option-added) button, .users:not(.user-added) button{
+.criteria:not(.criteria-added) button, .option:not(.option-added) button, .users:not(.user-added) button {
     background-color: rgb(0, 128, 128) !important;
 }
 
-.criteria:not(.criteria-added){
+.criteria-weight span {
+    background-color: rgb(0, 128, 128) !important;
+}
+
+.criteria:not(.criteria-added) {
     padding-bottom: 25px;
 }
 
-.criteria-added button, .option-added button, .user-added button{
+.criteria-added button, .option-added button, .user-added button {
     background-color: #8a3e3b !important;
 }
 
@@ -94,6 +98,22 @@ input:focus {
     width: initial !important;
     text-align: center;
 }
-hr{
+
+hr {
     background-color: white;
+}
+
+.description-and-weight {
+    margin-bottom: 20px;
+}
+
+.description-and-weight span {
+    min-width: 40px;
+    max-width: 40px;
+    color: gray;
+}
+
+.description-and-weight div {
+    width: calc(100% - 40px);
+    display: inline-block;
 }

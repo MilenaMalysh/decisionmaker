@@ -200,9 +200,10 @@ footer {
 
 .card {
     width: 100%;
-    background-color: rgb(0, 128, 128);
+    background-color: transparent;
     border-radius: 0 ;
     margin-top: 20px;
+    border-color: rgb(0, 128, 128);
 }
 
 .card-block {
@@ -211,8 +212,19 @@ footer {
 }
 
 .card-header {
-    background-color: rgb(0, 128, 128);
+    background-color: transparent;
     color: white;
+    border-color: rgb(0, 128, 128);
+}
+
+#decision_title{
+    width: 100%;
+    color: aliceblue;
+    font-size: 20pt;
+    padding: 16px;
+    border-radius: 15px;
+    border: 1px solid rgb(0, 128, 128);
+    text-align: center;
 }
 
 .option, .card-header {
