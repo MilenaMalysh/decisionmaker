@@ -10,28 +10,34 @@
     <div class="centred-container">
         <div class="questions-list" id="setup">
             <div class="list-group">
+            <div class="card-instruction">Please give a title to the decision. It should have the form of a question.</div>
                 <div class="question-content">
-                    <input class="question-block" placeholder="Enter Survey Title" v-model="question">
+                    <input class="question-block" placeholder="Enter the question you want to make a decision on." v-model="question" data-toggle="tooltip" data-placement="top" title="Example: Where should we build the new hospital?">
                 </div>
                 <div class="setup-categories">
                     <div class="criteria-setup">Criteria setup
+                    <div class="card-instruction">Please enter, one at a time, the criteria along which the decision should be evaluated. Add a description and a weight between 1 and 10. Higher weights make the criterion more important. Click "+" to add the criterion.</div>
                         <div class="criteria">
                             <div class="input-group">
                                 <input type="text" class="form-control criteria-title"
                                        v-model="currentCriterion.title"
-                                       placeholder="Criterion title">
+                                       placeholder="Criterion title"
+                                        data-toggle="tooltip" data-placement="top" title="Example: How many people live close to that location?">
                                 <span class="input-group-btn">
                                         <button class="btn btn-secondary" type="button"
-                                                v-on:click="addCriterion">+</button>
+                                                v-on:click="addCriterion"
+                                                 data-toggle="tooltip" data-placement="top" title="Add this criterion">+</button>
                                     </span>
                             </div>
                             <div>
                                 <input type="text" class="form-control criteria-description"
-                                       v-model="currentCriterion.description" placeholder="Criterion description">
+                                       v-model="currentCriterion.description" placeholder="Criterion description"
+                                        data-toggle="tooltip" data-placement="top" title="Example: The faster they can reach that location, the better.">
                                 <div class="criteria-weight input-group">
                                     <span class="input-group-addon">1</span>
                                     <input type="number" class="form-control ranged-value" min="1" max="10"
-                                           placeholder="weight" v-model="currentCriterion.weight">
+                                           placeholder="weight" v-model="currentCriterion.weight"
+                                            data-toggle="tooltip" data-placement="top" title="Example: 5. That means that each score entered by the participants is multiplied by 5.">
                                     <span class="input-group-addon">10</span>
                                 </div>
                             </div>
@@ -39,21 +45,27 @@
 
                     </div>
                     <div class="option-setup">Options setup
+                    <div class="card-instruction">Please enter, one at a time, the options among which you want to choose. Click "+" to add the option.</div>
                         <div class="input-group option">
                             <input type="text" class="form-control option-title"
-                                   placeholder="Option title" v-model="currentAlternative.title">
+                                   placeholder="Option title" v-model="currentAlternative.title"
+                                    data-toggle="tooltip" data-placement="top" title="Example: Dulwich">
                             <span class="input-group-btn">
                                     <button class="btn btn-secondary" type="button"
-                                            v-on:click="addAlternative">+</button>
+                                            v-on:click="addAlternative"
+                                             data-toggle="tooltip" data-placement="top" title="Add this option">+</button>
                                 </span>
                         </div>
                     </div>
                     <div class="users-setup">Users setup
+                    <p class="card-instruction">Please enter, one at a time, e-mail addresses of the participants you want to invite to the decision. Click "+" to add the e-mail address.</p>
                         <div class="input-group users">
                             <input type="email" class="form-control users-title"
-                                   placeholder="User's email" v-model="currentUser.email">
+                                   placeholder="User's email" v-model="currentUser.email"
+                                    data-toggle="tooltip" data-placement="top" title="Example: me@decisionmaker.com">
                             <span class="input-group-btn">
-                                    <button class="btn btn-secondary" type="button" v-on:click="addUser">+</button>
+                                    <button class="btn btn-secondary" type="button" v-on:click="addUser"
+                                     data-toggle="tooltip" data-placement="top" title="Add this user">+</button>
                                 </span>
                         </div>
                     </div>
@@ -62,8 +74,11 @@
                 <div class="setup-block">
                     <div>
                         <div class="criteria-setup">
+                        <div class="card-instruction" v-if="criterionPresent()">If you want to remove a criterion, press "-".</div>
+                        <div class="card-instruction" v-else>Please enter at least one criterion and press "+".</div>
                             <div v-for="criterion in criteria">
                                 <div class="criteria criteria-added">
+
                                     <div class="input-group criteria criteria-added">
 
                                         <input type="text" class="form-control criteria-title"
@@ -97,6 +112,8 @@
                     </div>
                     <div>
                         <div class="option-setup">
+                        <div class="card-instruction" v-if="optionPresent()">If you want to remove an option, press "-".</div>
+                        <div class="card-instruction" v-else>Please enter at least one option and press "+".</div>
                             <div v-for="(alternative, index) in alternatives">
                                 <div class="input-group option option-added">
                                     <input type="text" class="form-control option-title"
@@ -111,6 +128,8 @@
                     </div>
                     <div>
                         <div class="users-setup">
+                        <div class="card-instruction" v-if="userPresent()">If you want to remove a user, press "-".</div>
+                        <div class="card-instruction" v-else>Please enter at least one user and press "+".</div>
                             <div v-for="(user, index) in users">
                                 <div class="input-group users user-added">
                                     <input type="text" class="form-control users-title"
@@ -126,10 +145,13 @@
                 </div>
             </div>
 
-            <div class="row">
+
+            <footer>
+    <div class="row" id = "setup">
                 <button type="button" class="btn" id="submit-survey-btn" v-on:click="submit"> Submit question to team
                 </button>
             </div>
+</footer>
         </div>
 
     </div>

@@ -11,12 +11,21 @@ var setup = new Vue({
     },
     delimiters: ["[[", "]]"],
     methods: {
+        optionPresent(){
+            return (this.alternatives.length >= 1);
+        },
+        criterionPresent(){
+            return (this.criteria.length >= 1);
+        },
+        userPresent(){
+            return (this.users.length >= 1);
+        },
         validate() {
             return ((this.alternatives.length >= 1) && (this.criteria.length >= 1) && (this.users.length >= 1) && this.question);
         },
         submit() {
             if (!(this.validate())) {
-                alert('Please fill survey title and add at least one option, criterion, user.');
+                alert('Please fill survey title and add at least one option, criterion and user.');
             } else {
                 //submit data
                 $.ajax({

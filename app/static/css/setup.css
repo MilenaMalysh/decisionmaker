@@ -118,3 +118,9 @@ hr {
     width: calc(100% - 40px);
     display: inline-block;
 }
+
+.card-instruction{
+    background-color: gray;
+    text-align: center;
+    color: white;
+}
