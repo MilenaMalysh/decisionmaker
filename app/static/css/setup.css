@@ -124,3 +124,7 @@ hr {
     text-align: center;
     color: white;
 }
+
+footer.row-smallMargin{
+    margin-bottom: 100px;
+}

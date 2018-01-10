@@ -8,6 +8,7 @@ from django.urls import reverse
 
 class Decision(models.Model):
     name = models.CharField(max_length=50)
+    description = models.CharField(max_length=500)
 
     def get_absolute_url(self):
         return reverse('decision', args=[str(self.id)])

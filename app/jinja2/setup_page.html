@@ -14,6 +14,10 @@
                 <div class="question-content">
                     <input class="question-block" placeholder="Enter the question you want to make a decision on." v-model="question" data-toggle="tooltip" data-placement="top" title="Example: Where should we build the new hospital?">
                 </div>
+                <div class="card-instruction">Please describe the decision in the field below. Give context to make everyone understand the question.</div>
+                <div class="question-content">
+                    <input class="question-block" placeholder="Enter a description for your question here." v-model="description" data-toggle="tooltip" data-placement="top" title="Example: We are looking for a place to build a new hospital that serves the City of London. Simulations say that we will face a shortage in hospital capacity of 35% by 2030 if we don't upgrade or build new hospitals. The current hospitals are in densely populated areas and can't be extended.">
+                </div>
                 <div class="setup-categories">
                     <div class="criteria-setup">Criteria setup
                     <div class="card-instruction">Please enter, one at a time, the criteria along which the decision should be evaluated. Add a description and a weight between 1 and 10. Higher weights make the criterion more important. Click "+" to add the criterion.</div>
@@ -147,7 +151,7 @@
 
 
             <footer>
-    <div class="row" id = "setup">
+    <div class="row-smallMargin" id = "setup">
                 <button type="button" class="btn" id="submit-survey-btn" v-on:click="submit"> Submit question to team
                 </button>
             </div>
