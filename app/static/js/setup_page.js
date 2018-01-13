@@ -1,3 +1,7 @@
+window.onload = function () {
+    introJs().start();
+};
+
 var setup = new Vue({
     el: '#setup',
     data: {
@@ -34,7 +38,7 @@ var setup = new Vue({
                             window.location.href = data.redirect;
                         }
                         else {
-                            alert("malformed response: "+ textStatus)
+                            alert("malformed response: " + textStatus)
                         }
                     },
                     error: function (jqXHR, textStatus, errorThrown) {

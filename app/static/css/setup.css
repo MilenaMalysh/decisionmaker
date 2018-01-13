@@ -119,3 +119,7 @@ hr {
     width: calc(100% - 40px);
     display: inline-block;
 }
+
+.introjs-helperLayer {
+    opacity: 0.6;
+}

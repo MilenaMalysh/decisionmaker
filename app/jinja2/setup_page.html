@@ -3,7 +3,16 @@
 {% block scripts %}
     <script type="text/javascript" src="{{ static("js/setup_page.js")}}" defer
             xmlns="http://www.w3.org/1999/html"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intro.js/2.7.0/intro.js"
+            integrity="sha256-mBbnx2M+MwM/FlIODLLemky0H4LDQRhY0n0zHWQSizE=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intro.js/2.7.0/introjs-rtl.css"
+          integrity="sha256-9WIGoAIrIn2mbz7qN3Vv4xA5dtLGQSwcDbTTvTxSKl4=" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intro.js/2.7.0/introjs.css"
+          integrity="sha256-NMU2GoYB9Aw+Vdu1k4sbT/+wEpcLh1sJU7n3ONeb1p4=" crossorigin="anonymous"/>
     <link rel="stylesheet" href="{{ static("css/setup.css")}}">
+
+
 {% endblock %}
 
 {% block content %}
@@ -11,10 +20,15 @@
         <div class="questions-list" id="setup">
             <div class="list-group">
                 <div class="question-content">
-                    <input class="question-block" placeholder="Enter Survey Title" v-model="question">
+                    <input class="question-block" data-step="1"
+                           data-intro="Welcome! You are on your way to setting up decision for your team to make. Please select the question you want to answer."
+                           placeholder="Enter Survey Title" v-model="question">
                 </div>
                 <div class="setup-categories">
-                    <div class="criteria-setup">Criteria setup
+                    <div class="criteria-setup" data-step="2"
+                         data-intro="Please set up criteria. Following information is needed: title, description and weight of criterion.
+                         After entering click on '+' button to add criterion to decision settings"
+                    >Criteria setup
                         <div class="criteria">
                             <div class="input-group">
                                 <input type="text" class="form-control criteria-title"
@@ -38,7 +52,10 @@
                         </div>
 
                     </div>
-                    <div class="option-setup">Options setup
+                    <div class="option-setup"
+                         data-step="3"
+                         data-intro="Please set up options. Title of option is needed. After entering click on '+' button to add the option to decision settings"
+                    >Options setup
                         <div class="input-group option">
                             <input type="text" class="form-control option-title"
                                    placeholder="Option title" v-model="currentAlternative.title">
@@ -48,12 +65,17 @@
                                 </span>
                         </div>
                     </div>
-                    <div class="users-setup">Users setup
+                    <div class="users-setup"
+                         data-step="4"
+                         data-intro="Please add all team members. We need emails in oder to send them invitations.
+                         After entering click on '+' button to add the user to decision settings"
+                    >Users setup
                         <div class="input-group users">
                             <input type="email" class="form-control users-title"
                                    placeholder="User's email" v-model="currentUser.email">
                             <span class="input-group-btn">
-                                    <button class="btn btn-secondary" type="button" v-on:click="addUser">+</button>
+                                    <button class="btn btn-secondary" type="button" v-on:click="addUser"
+                                    >+</button>
                                 </span>
                         </div>
                     </div>
@@ -118,7 +140,10 @@
             </div>
 
             <div class="row">
-                <button type="button" class="btn" id="submit-survey-btn" v-on:click="submit"> Submit question to team
+                <button type="button" class="btn" id="submit-survey-btn" v-on:click="submit"
+                        data-step="5"
+                        data-intro="Click on this button to finish with decision settings and send invitations to all team members"
+                > Submit question to team
                 </button>
             </div>
         </div>
