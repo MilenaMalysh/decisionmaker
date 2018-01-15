@@ -21,13 +21,13 @@
             <div class="list-group">
                 <div class="question-content">
                     <input class="question-block" data-step="1"
-                           data-intro="Welcome! You are on your way to setting up decision for your team to make. Please select the question you want to answer."
+                           data-intro="Welcome! You are on your way to setting up decision for your team to make. Please enter the question you want to answer."
                            placeholder="Enter Survey Title" v-model="question">
                 </div>
                 <div class="setup-categories">
                     <div class="criteria-setup" data-step="2"
-                         data-intro="Please set up criteria. Following information is needed: title, description and weight of criterion.
-                         After entering click on '+' button to add criterion to decision settings"
+                         data-intro="Please set up criteria. Following information is needed: title, description and weight of criterion between 1 and 10. Your team's entries will be multiplied with the weight. A higher weight gives more importance to the criterion.
+                         After entering click the '+' button to add the criterion to decision settings"
                     >Criteria setup
                         <div class="criteria">
                             <div class="input-group">
@@ -54,7 +54,7 @@
                     </div>
                     <div class="option-setup"
                          data-step="3"
-                         data-intro="Please set up options. Title of option is needed. After entering click on '+' button to add the option to decision settings"
+                         data-intro="Please set up options. Title of option is needed. After entering click on the '+' button to add the option to decision settings"
                     >Options setup
                         <div class="input-group option">
                             <input type="text" class="form-control option-title"
@@ -68,7 +68,8 @@
                     <div class="users-setup"
                          data-step="4"
                          data-intro="Please add all team members. We need emails in oder to send them invitations.
-                         After entering click on '+' button to add the user to decision settings"
+                         After entering click on '+' button to add the user to decision settings.
+                         If you want to take part in the decision yourself, don't forget to enter your own email address as well."
                     >Users setup
                         <div class="input-group users">
                             <input type="email" class="form-control users-title"
