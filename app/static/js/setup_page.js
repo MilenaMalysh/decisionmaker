@@ -75,6 +75,9 @@ var setup = new Vue({
         },
         removeUser(index) {
             this.users.splice(index, 1);
+        },
+        restartIntro() {
+            introJs().start();
         }
     }
 });
