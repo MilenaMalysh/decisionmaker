@@ -63,6 +63,8 @@ var setup = new Vue({
             if (this.currentCriterion.title && this.currentCriterion.description && this.currentCriterion.weight) {
                 this.criteria.push(this.currentCriterion);
                 this.currentCriterion = {name: '', description: '', weight: ""};
+            } else {
+                alert('Please fill all the 3 fields to add a new criterion.');
             }
         },
         removeAlternative(index) {
