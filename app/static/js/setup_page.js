@@ -18,6 +18,11 @@ var setup = new Vue({
         validate() {
             return ((this.alternatives.length >= 1) && (this.criteria.length >= 1) && (this.users.length >= 1) && this.question);
         },
+        validateEmail(email) {
+            console.log();
+            var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            return re.test(email);
+        },
         submit() {
             if (!(this.validate())) {
                 alert('Please fill survey title and add at least one option, criterion, user.');
@@ -55,8 +60,13 @@ var setup = new Vue({
         },
         addUser() {
             if (this.currentUser.email) {
-                this.users.push(this.currentUser);
-                this.currentUser = {email: ''};
+                if(this.validateEmail(this.currentUser.email)){
+                    this.users.push(this.currentUser);
+                    this.currentUser = {email: ''};
+                } else {
+                    alert('Please enter a valid e-mail address.');
+                }
+
             }
         },
         addCriterion() {
