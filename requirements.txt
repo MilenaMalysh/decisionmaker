@@ -1,6 +1,5 @@
 Django==1.11.6
 Jinja2==2.10
-keyring==10.5.0
 MarkupSafe==1.0
 python-http-client==3.0.0
 pytz==2017.2
