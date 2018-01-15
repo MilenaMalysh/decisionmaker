@@ -62,7 +62,7 @@
                         </div>
                     </div>
                     <div class="users-setup">Users setup
-                    <p class="card-instruction">Please enter, one at a time, e-mail addresses of the participants you want to invite to the decision. Click "+" to add the e-mail address.</p>
+                    <div class="card-instruction">Please enter, one at a time, e-mail addresses of the participants you want to invite to the decision. Click "+" to add the e-mail address.</div>
                         <div class="input-group users">
                             <input type="email" class="form-control users-title"
                                    placeholder="User's email" v-model="currentUser.email"
@@ -96,8 +96,7 @@
                                     </div>
                                     <div class="description-and-weight">
                                         <div>
-                                            <i>asdkasjdks sdkjkhfjkas jsdjfkjks fskdjhfskj sf ksf skdfsdf sdfsdf sfsdf
-                                                sfjfdljksf</i>
+                                            <i>[[criterion.description]]</i>
                                         </div>
                                         <span><i>[[criterion.weight]]</i></span>
                                     </div>
