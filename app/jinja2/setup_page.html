@@ -21,8 +21,8 @@
             <div class="list-group">
                 <div class="question-content">
                     <input class="question-block" data-step="1"
-                           data-intro="Welcome! You are on your way to setting up decision for your team to make. Please enter the question you want to answer."
-                           placeholder="Enter Survey Title" v-model="question">
+                           data-intro="Welcome! You are on your way to setting up decision for your team to make. Please enter the question you want to answer." data-toggle="tooltip" data-placement="top" title="Example: Where should we build the new hospital?"
+                           placeholder="Enter the question you want to ask to your team." v-model="question">
                 </div>
                 <div class="setup-categories">
                     <div class="criteria-setup" data-step="2"
@@ -33,19 +33,19 @@
                             <div class="input-group">
                                 <input type="text" class="form-control criteria-title"
                                        v-model="currentCriterion.title"
-                                       placeholder="Criterion title">
+                                       placeholder="Criterion title" data-toggle="tooltip" data-placement="top" title="Example: How many people live close to that location?">
                                 <span class="input-group-btn">
                                         <button class="btn btn-secondary" type="button"
-                                                v-on:click="addCriterion">+</button>
+                                                v-on:click="addCriterion" data-toggle="tooltip" data-placement="top" title="Add this criterion">+</button>
                                     </span>
                             </div>
                             <div>
                                 <input type="text" class="form-control criteria-description"
-                                       v-model="currentCriterion.description" placeholder="Criterion description">
+                                       v-model="currentCriterion.description" placeholder="Criterion description" data-toggle="tooltip" data-placement="top" title="Example: The faster they can reach that location, the better.">
                                 <div class="criteria-weight input-group">
                                     <span class="input-group-addon">1</span>
                                     <input type="number" class="form-control ranged-value" min="1" max="10"
-                                           placeholder="weight" v-model="currentCriterion.weight">
+                                           placeholder="weight" v-model="currentCriterion.weight" data-toggle="tooltip" data-placement="top" title="Example: 5. That means that each score entered by the participants is multiplied by 5.">
                                     <span class="input-group-addon">10</span>
                                 </div>
                             </div>
@@ -58,10 +58,10 @@
                     >Options setup
                         <div class="input-group option">
                             <input type="text" class="form-control option-title"
-                                   placeholder="Option title" v-model="currentAlternative.title">
+                                   placeholder="Option title" v-model="currentAlternative.title" data-toggle="tooltip" data-placement="top" title="Example: Dulwich">
                             <span class="input-group-btn">
                                     <button class="btn btn-secondary" type="button"
-                                            v-on:click="addAlternative">+</button>
+                                            v-on:click="addAlternative" data-toggle="tooltip" data-placement="top" title="Add this option">+</button>
                                 </span>
                         </div>
                     </div>
@@ -73,9 +73,9 @@
                     >Users setup
                         <div class="input-group users">
                             <input type="email" class="form-control users-title"
-                                   placeholder="User's email" v-model="currentUser.email">
+                                   placeholder="User's email" v-model="currentUser.email" data-toggle="tooltip" data-placement="top" title="Example: me@decisionmaker.com">
                             <span class="input-group-btn">
-                                    <button class="btn btn-secondary" type="button" v-on:click="addUser"
+                                    <button class="btn btn-secondary" type="button" v-on:click="addUser" data-toggle="tooltip" data-placement="top" title="Add this user"
                                     >+</button>
                                 </span>
                         </div>
