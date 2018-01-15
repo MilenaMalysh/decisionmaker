@@ -1,3 +1,4 @@
+import os
 import yagmail
 from django.urls import reverse
 
@@ -5,7 +6,8 @@ from django.urls import reverse
 def send_invitation(request, invitation):
     decision = invitation.decision.name
     url = request.build_absolute_uri(reverse('filling', args=[invitation.id]))
-    yagmail.SMTP('zenclosure').send(invitation.user.email, "Decisionmaker:" + decision,
+    password = os.getenv('EMAIL_PASSWORD')
+    yagmail.SMTP('zenclosure', password).send(invitation.user.email, "Decisionmaker:" + decision,
                                     "<div style=\"width: 40rem; border: 1px solid rgb(0, 128, 128); border-radius: 5px\">"
                                     "<h3 style=\"background-color: rgb(0, 128, 128); margin: 0; padding: 10px; text-align: center; color: white; font: 15px arial, sans-serif;\">Decisionmaker</h3>"
                                     "<p style=\"text-align: center;\">Dear team member: You are invited to take part"
