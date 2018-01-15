@@ -95,41 +95,45 @@
                 <div class="setup-block">
                     <div>
                         <div class="criteria-setup">
-                            <div class="tips" v-if="criterionPresent()">If you want to remove a criterion, press "-".</div>
-                            <div class="tips" v-else>Please enter at least one criterion and press "+".</div>
-                            <div v-for="criterion in criteria">
-{#                                <div class="criteria criteria-added">#}
-{#                                    <div class="input-group criteria criteria-added">#}
-{##}
-{#                                        <input type="text" class="form-control criteria-title"#}
-{#                                               v-bind:value="criterion.title"#}
-{#                                               readonly="readonly">#}
-{#                                        <span class="input-group-btn">#}
-{#                                    <button class="btn btn-secondary" type="button"#}
-{#                                            v-on:click="removeCriterion(criterion)">-</button>#}
-{#                                        </span>#}
-{##}
-{#                                    </div>#}
-{#                                    <div class="description-and-weight">#}
-{#                                        <div>#}
-{#                                            <i>[[criterion.description]]</i>#}
-{#                                        </div>#}
-{#                                        <span><i>[[criterion.weight]]</i></span>#}
-{#                                    </div>#}
-{#                                </div>#}
-                                
+                            <div class="tips list" v-if="criterionPresent()">If you want to remove a criterion, press "-".</div>
+                            <div class="tips list" v-else>Please enter at least one criterion and press "+".</div>
+                            <div v-for="(criterion, index) in criteria">
+                                <div class="tips list">Criterion [[index + 1]]</div>
+                                <div class="criteria">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control criteria-title"
+                                               v-model="criterion.title"
+                                               placeholder="Criterion title">
+                                        <span class="input-group-btn">
+                                        <button class="btn btn-secondary" type="button"
+                                                v-on:click="removeCriterion(index)">-</button>
+                                    </span>
+                                    </div>
+                                    <div>
+                                        <input type="text" class="form-control criteria-description"
+                                               v-model="criterion.description"
+                                               placeholder="Criterion description">
+                                        <div class="criteria-weight input-group">
+                                            <span class="input-group-addon">1</span>
+                                            <input type="number" class="form-control ranged-value" min="1" max="10"
+                                                   placeholder="weight" v-model="criterion.weight">
+                                            <span class="input-group-addon">10</span>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
 
                         </div>
                     </div>
                     <div>
                         <div class="option-setup">
-                            <div class="tips" v-if="optionPresent()">If you want to remove an option, press "-".</div>
-                            <div class="tips" v-else>Please enter at least one option and press "+".</div>
+                            <div class="tips list" v-if="optionPresent()">If you want to remove an option, press "-".</div>
+                            <div class="tips list" v-else>Please enter at least one option and press "+".</div>
                             <div v-for="(alternative, index) in alternatives">
-                                <div class="input-group option option-added">
+                                <div class="tips list">Option [[index +1]]</div>
+                                <div class="input-group option">
                                     <input type="text" class="form-control option-title"
-                                           v-model="alternative.title" readonly="readonly">
+                                           placeholder="Option title" v-model="alternative.title">
                                     <span class="input-group-btn">
                                     <button class="btn btn-secondary" type="button"
                                             v-on:click="removeAlternative(index)">-</button>
@@ -140,15 +144,16 @@
                     </div>
                     <div>
                         <div class="users-setup">
-                            <div class="tips" v-if="userPresent()"> If you want to remove a user, press "-".</div>
-                            <div class="tips" v-else>Please enter at least one user email and press "+".</div>
+                            <div class="tips list" v-if="userPresent()"> If you want to remove a user, press "-".</div>
+                            <div class="tips list" v-else>Please enter at least one user email and press "+".</div>
                             <div v-for="(user, index) in users">
-                                <div class="input-group users user-added">
-                                    <input type="text" class="form-control users-title"
-                                           v-model="user.email" readonly="readonly">
+                                <div class="tips list">User [[index +1]]</div>
+                                <div class="input-group users">
+                                    <input type="email" class="form-control users-title"
+                                           placeholder="User's email" v-model="user.email">
                                     <span class="input-group-btn">
-                                    <button class="btn btn-secondary" type="button"
-                                            v-on:click="removeUser(index)">-</button>
+                                    <button class="btn btn-secondary" type="button" v-on:click="removeUser(index)"
+                                    >-</button>
                                 </span>
                                 </div>
                             </div>

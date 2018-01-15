@@ -101,8 +101,8 @@ input:focus {
     background-color: rgb(0, 128, 128) !important;
 }
 
-.criteria:not(.criteria-added) {
-    padding-bottom: 25px;
+.criteria, .option, .user {
+    margin-bottom: 25px;
 }
 
 .criteria-added button, .option-added button, .user-added button {
@@ -146,5 +146,11 @@ hr {
 .tips.setup {
     min-height: 80px;
     max-height: 80px;
+    margin: 0;
+}
+
+.tips.list{
+    min-height: 30px;
+    max-height: 30px;
     margin: 0;
 }
