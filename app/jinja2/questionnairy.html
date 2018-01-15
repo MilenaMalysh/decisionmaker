@@ -10,13 +10,20 @@
         <div class="questions-list" id="app">
             <div class="list-group">
                 <div id="decision_title">
+                    <p class="tips">Ok! Let's help your team to answer the question:
+                    </p>
                     <p>{{ decision_title }}
                     </p>
+                    <p id="decision-description"><i>{{ decision_description}}</i>
+                    </p>
                 </div>
-                <div v-for="answer in answers">
+                <div class="tips">Please enter the weight of criterion you think is appropriate
+                    between 1 and 10 to the right. Higher weights make the criterion more important.
+                    Then set the scores for each option per criterion between 1 and 10.</div>
+                <div v-for="(answer, index) in answers">
                     <div class="card">
                         <div class="card-header">
-                            <h4 class="card-title">[[ findQuestion(answer.question_id).title ]]</h4>
+                            <h4 class="card-title"><span class="utils-inf">Criterion [[index + 1]]</span> "[[ findQuestion(answer.question_id).title ]]"</h4>
                             <div class="importance">
                                 <span class="priority-label">Weight</span>
                                 <div class="input-group">
@@ -30,9 +37,9 @@
                         <div class="card-block">
                             <p class="card-text"> [[ findQuestion(answer.question_id).description ]]</p>
                             <ul class="list-inline list-group-horizontal">
-                                <li class="list-group-item" v-for="option in answer.options">
+                                <li class="list-group-item" v-for="(option, index) in answer.options">
                                     <div class="option">
-                                        <label>[[ findOption(option.option_id).title ]]</label>
+                                        <label><span class="utils-inf">Option [[index + 1]]</span> [[ findOption(option.option_id).title ]]</label>
                                         <div class="input-group">
                                             <span class="input-group-addon">1</span>
                                             <input type="number" class="form-control ranged-value" min="1" max="10"

@@ -15,6 +15,7 @@ def create(request):
         body_unicode = request.body.decode('utf-8')
         data = json.loads(body_unicode)
         decision = data['decision']
+        description = data['description']
         options = data['options']
         criteria = data['criteria']
         emails = (user['email'] for user in data['users'])
@@ -26,7 +27,7 @@ def create(request):
             return bad_request("missing criteria")
         if not emails:
             bad_request("missing emails")
-        decision = Decision.objects.create(name=decision)
+        decision = Decision.objects.create(name=decision, description=description)
         users = list(User.objects.get_or_create(email=email)[0] for email in emails)
         options = list(Option.objects.create(name=option['title'], decision=decision) for option in options)
         criteria = list(Criteria.objects.create(name=criterion['title'], description=criterion['description'],
@@ -35,7 +36,7 @@ def create(request):
         invitations = list(Invitation.objects.create(user=user, decision=decision) for user in users)
         for invitation in invitations:
             send_invitation(request, invitation)
-        return JsonResponse({'redirect': decision.get_absolute_url()})
+        return JsonResponse({'redirect': 'index/'})
     else:
         return HttpResponseNotAllowed(['POST'])
 
@@ -68,7 +69,7 @@ def filling_page(request, invitation_id):
                 for criterion in Criteria.objects.filter(decision=invitation.decision))
     return render(request=request, template_name='questionnairy.html',
                   context={'options': list(options), 'questions': list(criteria), 'invitation_id': invitation.id,
-                           'decision_title': invitation.decision.name})
+                           'decision_title': invitation.decision.name, 'decision_description': invitation.decision.description})
 
 
 def landing(request):

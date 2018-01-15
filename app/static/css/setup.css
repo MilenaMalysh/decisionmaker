@@ -8,6 +8,10 @@
 
 }
 
+.question-content hr{
+    margin: 0;
+}
+
 .question-block {
     background-color: transparent;
     min-height: 60px;
@@ -15,6 +19,17 @@
     text-align: center;
     width: 100%;
     margin: 10px;
+    border-style: none;
+    font-size: x-large;
+}
+
+.question-description-block {
+    background-color: transparent;
+    min-height: 40px;
+    color: white;
+    text-align: center;
+    width: 100%;
+    margin: 5px;
     border-style: none;
 }
 
@@ -45,7 +60,6 @@ input:focus {
 .criteria-setup, .option-setup, .users-setup {
     padding: 20px;
     width: 100%;
-
 }
 
 .criteria, .criteria .input-group, .option, .users {
@@ -122,4 +136,15 @@ hr {
 
 .introjs-helperLayer {
     opacity: 0.6;
+}
+.tips{
+    color: gray !important;
+    width: 100%;
+    text-align: center;
+    font-size: small;
+}
+.tips.setup {
+    min-height: 80px;
+    max-height: 80px;
+    margin: 0;
 }

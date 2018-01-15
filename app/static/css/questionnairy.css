@@ -78,14 +78,10 @@ footer {
     display: flex;
 }
 
-.team-member{
+#copyright{
     flex: 1;
     color: aliceblue;
     font-size: 15px;
-}
-
-.team-member >label {
-    margin-left: 10px;
 }
 
 .ranged-value{
@@ -231,6 +227,17 @@ footer {
 /**/
 /**/
 
+.tips{
+    color: gray !important;
+    width: 100%;
+    text-align: center;
+    font-size: medium;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+.utils-inf{
+    color:gray;
+}
 .card {
     width: 100%;
     background-color: transparent;
@@ -258,6 +265,10 @@ footer {
     border-radius: 15px;
     border: 1px solid rgb(0, 128, 128);
     text-align: center;
+}
+
+#decision-description{
+    font-size: medium;
 }
 
 .option, .card-header {
@@ -315,6 +326,7 @@ footer {
     margin-right: auto;
     margin-left: auto;
     margin-top: 30px;
+    margin-bottom: 40px;
     height: 40px;
     font-size: 15pt;
 }

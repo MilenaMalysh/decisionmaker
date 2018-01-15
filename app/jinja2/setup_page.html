@@ -20,15 +20,23 @@
         <div class="questions-list" id="setup">
             <div class="list-group">
                 <div class="question-content">
+                    <div class="tips">Please give a title to the decision. It should have the form of a question.</div>
                     <input class="question-block" data-step="1"
-                           data-intro="Welcome! You are on your way to setting up decision for your team to make. Please select the question you want to answer."
-                           placeholder="Enter Survey Title" v-model="question">
+                           data-intro="Welcome! You are on your way to setting up decision for your team to make. Please enter the question you want to answer."
+                           v-model="question">
+                    <hr>
+                    <div class="tips">Please describe the decision in the field below. Give context to make everyone understand the question.</div>
+                    <input class="question-description-block" data-step="2"
+                           data-intro="Please enter description of the question you want to answer."
+                           v-model="questionDescription">
                 </div>
                 <div class="setup-categories">
-                    <div class="criteria-setup" data-step="2"
-                         data-intro="Please set up criteria. Following information is needed: title, description and weight of criterion.
+                    <div class="criteria-setup" data-step="3"
+                         data-intro="Please set up criteria. Following information is needed: title, description and weight of criterion between 1 and 10.
+                         Your team's entries will be multiplied with the weight. A higher weight gives more importance to the criterion
                          After entering click on '+' button to add criterion to decision settings"
                     >Criteria setup
+                        <div class="tips setup">Please enter, one at a time, the criteria along which the decision should be evaluated. Add a description and a weight between 1 and 10. Higher weights make the criterion more important.Click "+" to add the criterion.</div>
                         <div class="criteria">
                             <div class="input-group">
                                 <input type="text" class="form-control criteria-title"
@@ -53,9 +61,10 @@
 
                     </div>
                     <div class="option-setup"
-                         data-step="3"
+                         data-step="4"
                          data-intro="Please set up options. Title of option is needed. After entering click on '+' button to add the option to decision settings"
                     >Options setup
+                        <div class="tips setup">Please enter, one at a time, the options among which you want to choose. Click "+" to add the option.</div>
                         <div class="input-group option">
                             <input type="text" class="form-control option-title"
                                    placeholder="Option title" v-model="currentAlternative.title">
@@ -66,10 +75,12 @@
                         </div>
                     </div>
                     <div class="users-setup"
-                         data-step="4"
+                         data-step="5"
                          data-intro="Please add all team members. We need emails in oder to send them invitations.
-                         After entering click on '+' button to add the user to decision settings"
+                         After entering click on '+' button to add the user to decision settings.
+                         If you want to take part in the decision yourself, don't forget to enter your own email address as well."
                     >Users setup
+                        <div class="tips setup">Please enter, one at a time, e-mail addresses of the participants you want to invite to the decision. Click "+" to add the e-mail address.</div>
                         <div class="input-group users">
                             <input type="email" class="form-control users-title"
                                    placeholder="User's email" v-model="currentUser.email">
@@ -84,32 +95,37 @@
                 <div class="setup-block">
                     <div>
                         <div class="criteria-setup">
+                            <div class="tips" v-if="criterionPresent()">If you want to remove a criterion, press "-".</div>
+                            <div class="tips" v-else>Please enter at least one criterion and press "+".</div>
                             <div v-for="criterion in criteria">
-                                <div class="criteria criteria-added">
-                                    <div class="input-group criteria criteria-added">
-
-                                        <input type="text" class="form-control criteria-title"
-                                               v-bind:value="criterion.title"
-                                               readonly="readonly">
-                                        <span class="input-group-btn">
-                                    <button class="btn btn-secondary" type="button"
-                                            v-on:click="removeCriterion(criterion)">-</button>
-                                        </span>
-
-                                    </div>
-                                    <div class="description-and-weight">
-                                        <div>
-                                            <i>[[criterion.description]]</i>
-                                        </div>
-                                        <span><i>[[criterion.weight]]</i></span>
-                                    </div>
-                                </div>
+{#                                <div class="criteria criteria-added">#}
+{#                                    <div class="input-group criteria criteria-added">#}
+{##}
+{#                                        <input type="text" class="form-control criteria-title"#}
+{#                                               v-bind:value="criterion.title"#}
+{#                                               readonly="readonly">#}
+{#                                        <span class="input-group-btn">#}
+{#                                    <button class="btn btn-secondary" type="button"#}
+{#                                            v-on:click="removeCriterion(criterion)">-</button>#}
+{#                                        </span>#}
+{##}
+{#                                    </div>#}
+{#                                    <div class="description-and-weight">#}
+{#                                        <div>#}
+{#                                            <i>[[criterion.description]]</i>#}
+{#                                        </div>#}
+{#                                        <span><i>[[criterion.weight]]</i></span>#}
+{#                                    </div>#}
+{#                                </div>#}
+                                
                             </div>
 
                         </div>
                     </div>
                     <div>
                         <div class="option-setup">
+                            <div class="tips" v-if="optionPresent()">If you want to remove an option, press "-".</div>
+                            <div class="tips" v-else>Please enter at least one option and press "+".</div>
                             <div v-for="(alternative, index) in alternatives">
                                 <div class="input-group option option-added">
                                     <input type="text" class="form-control option-title"
@@ -124,6 +140,8 @@
                     </div>
                     <div>
                         <div class="users-setup">
+                            <div class="tips" v-if="userPresent()"> If you want to remove a user, press "-".</div>
+                            <div class="tips" v-else>Please enter at least one user email and press "+".</div>
                             <div v-for="(user, index) in users">
                                 <div class="input-group users user-added">
                                     <input type="text" class="form-control users-title"
@@ -141,7 +159,7 @@
 
             <div class="row">
                 <button type="button" class="btn" id="submit-survey-btn" v-on:click="submit"
-                        data-step="5"
+                        data-step="6"
                         data-intro="Click on this button to finish with decision settings and send invitations to all team members"
                 > Submit question to team
                 </button>

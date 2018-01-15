@@ -73,12 +73,9 @@ footer {
     display: flex;
 }
 
-.team-member{
+#copyright{
     flex: 1;
     color: aliceblue;
     font-size: 15px;
 }
 
-.team-member >label {
-    margin-left: 10px;
-}
