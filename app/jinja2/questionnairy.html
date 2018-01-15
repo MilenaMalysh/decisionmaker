@@ -9,15 +9,19 @@
     <div class="centred-container">
         <div class="questions-list" id="app">
             <div class="list-group">
-                <div id="decision_title">
+                <button type="button" class="btn btn-info" v-on:click="restartIntro">To see instructions, please click here</button>
+                <div id="decision_title" data-step="1"
+                           data-intro="Welcome! Thank you for taking part in the decision making. Here you see the question that we want to make a decision on">
                     <p>{{ decision_title }}
                     </p>
                 </div>
                 <div v-for="answer in answers">
-                    <div class="card">
+                    <div class="card" data-step="2"
+                           data-intro="Each of these blocks represent a criterion along which the question should be evaluated">
                         <div class="card-header">
                             <h4 class="card-title">[[ findQuestion(answer.question_id).title ]]</h4>
-                            <div class="importance">
+                            <div class="importance" data-step="3"
+                           data-intro="Enter on a scale from 1 to 10 how important the current criterion should be in your opinion. Higher numbers mean higher importance. The mean of all team members' entries will be multiplied with the scores for this criterion">
                                 <span class="priority-label">Weight</span>
                                 <div class="input-group">
                                     <span class="input-group-addon">1</span>
@@ -31,7 +35,8 @@
                             <p class="card-text"> [[ findQuestion(answer.question_id).description ]]</p>
                             <ul class="list-inline list-group-horizontal">
                                 <li class="list-group-item" v-for="option in answer.options">
-                                    <div class="option">
+                                    <div class="option" data-step="4"
+                                        data-intro="Each of these blocks represents an option, a possible decision outcome. Please give it a score as to how good it fulfills the current criterion on a scale from 1 to 10. Higher numbers are better">
                                         <label>[[ findOption(option.option_id).title ]]</label>
                                         <div class="input-group">
                                             <span class="input-group-addon">1</span>
@@ -47,7 +52,8 @@
                 </div>
             </div>
             <div class="row">
-                <button type="button" class="btn" id="submit-survey-btn" v-on:click="submitResults">Submit results
+                <button type="button" class="btn" id="submit-survey-btn" v-on:click="submitResults" data-step="5"
+                           data-intro="Click on this button to submit your scores and weights">Submit results
                 </button>
             </div>
         </div>
@@ -56,5 +62,12 @@
 {% endblock %}
 
 {% block scripts %}
-    <script type="text/javascript" src="{{ static("js/questionnairy.js")}}" defer></script>
+    <script type="text/javascript" src="{{ static("js/questionnairy.js")}}" defer xmlns="http://www.w3.org/1999/html"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intro.js/2.7.0/intro.js"
+            integrity="sha256-mBbnx2M+MwM/FlIODLLemky0H4LDQRhY0n0zHWQSizE=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intro.js/2.7.0/introjs-rtl.css"
+          integrity="sha256-9WIGoAIrIn2mbz7qN3Vv4xA5dtLGQSwcDbTTvTxSKl4=" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intro.js/2.7.0/introjs.css"
+          integrity="sha256-NMU2GoYB9Aw+Vdu1k4sbT/+wEpcLh1sJU7n3ONeb1p4=" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="{{ static("css/questionairy.css")}}">
 {% endblock %}

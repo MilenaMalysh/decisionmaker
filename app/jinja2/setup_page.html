@@ -95,7 +95,7 @@
                                                readonly="readonly">
                                         <span class="input-group-btn">
                                     <button class="btn btn-secondary" type="button"
-                                            v-on:click="removeCriterion(criterion)">-</button>
+                                            v-on:click="removeCriterion(criterion)" data-toggle="tooltip" data-placement="top" title="Remove this criterion">-</button>
                                         </span>
 
                                     </div>
@@ -118,7 +118,7 @@
                                            v-model="alternative.title" readonly="readonly">
                                     <span class="input-group-btn">
                                     <button class="btn btn-secondary" type="button"
-                                            v-on:click="removeAlternative(index)">-</button>
+                                            v-on:click="removeAlternative(index)" data-toggle="tooltip" data-placement="top" title="Remove this option">-</button>
                                 </span>
                                 </div>
                             </div>
@@ -132,7 +132,7 @@
                                            v-model="user.email" readonly="readonly">
                                     <span class="input-group-btn">
                                     <button class="btn btn-secondary" type="button"
-                                            v-on:click="removeUser(index)">-</button>
+                                            v-on:click="removeUser(index)" data-toggle="tooltip" data-placement="top" title="Remove this user">-</button>
                                 </span>
                                 </div>
                             </div>

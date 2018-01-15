@@ -52,6 +52,9 @@ var app = new Vue({
                     }
                 })
             }
+        },
+        restartIntro() {
+            introJs().start();
         }
     }
 });
