@@ -1,10 +1,13 @@
+dj-database-url==0.4.2
 Django==1.11.6
+django-heroku==0.2.0
 gunicorn==19.7.1
 Jinja2==2.10
 MarkupSafe==1.0
-pipdeptree==0.10.1
+psycopg2==2.7.3.2
 python-http-client==3.0.0
 pytz==2017.2
 sendgrid==5.3.0
 uuid==1.30
+whitenoise==3.3.1
 yagmail==0.10.209
