@@ -334,3 +334,29 @@ footer {
 .white-link {
     color: white;
 }
+
+/**/
+/**/
+/*THANK YOU*/
+/**/
+/**/
+
+#thank-you {
+    margin-top: 30px;
+    border-radius: 15px;
+    border: 2px white solid;
+    color: aliceblue;
+    font-size: 20pt;
+    text-align: center;
+    margin-bottom: 20px;
+    width: 80%;
+}
+
+#thank-you-pic{
+    width: 300px;
+    height: 140px;
+    margin-left: auto;
+    margin-right: auto;
+    background-image: url("../img/thank_you.png");
+    background-size: 100% 100%;
+}

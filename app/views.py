@@ -75,6 +75,9 @@ def filling_page(request, invitation_id):
 def landing(request):
     return render(request, 'welcome.html')
 
+def thank_you(request):
+    return render(request, 'thank_you.html')
+
 
 def result_page(request, invitation_id):
     invitation = get_object_or_404(Invitation, pk=invitation_id)
@@ -132,3 +135,11 @@ def result_plain(request, decision_id):
         normal_result = normal_solution(decision)
         return JsonResponse({'group_result': group_result.name, 'normal_result': normal_result.name})
     raise Http404()
+
+
+def accept_result(request, invitation_id):
+    invitation = Invitation.objects.get(id=invitation_id)
+    result = request.GET.get('result')
+    invitation.accepted = result
+    invitation.save()
+    return JsonResponse({'redirect': reverse('thank_you')})

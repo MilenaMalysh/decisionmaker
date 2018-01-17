@@ -26,7 +26,7 @@
                         <div class="option-text">
                             <p>Accept the result computed with the weights predefined by team leader</p>
                         </div>
-                        <button type="button" class="btn" id="predefined-weight-result-btn">[[normal_result]]</button>
+                        <button type="button" class="btn" v-on:click="acceptNormal" id="predefined-weight-result-btn">[[normal_result]]</button>
                     </div>
                 </div>
                 <div>
@@ -34,7 +34,7 @@
                         <div class="option-text">
                             <p>Accept the result computed using the mean weights entered by every team member</p>
                         </div>
-                        <button type="button" class="btn" id="mean-weight-result-btn">[[group_result]]</button>
+                        <button type="button" class="btn" v-on:click="acceptGroup" id="mean-weight-result-btn">[[group_result]]</button>
                     </div>
                 </div>
             </div>
