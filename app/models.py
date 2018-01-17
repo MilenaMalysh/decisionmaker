@@ -38,6 +38,7 @@ class Invitation(models.Model):
     sent = models.BooleanField(default=False)
     answered = models.BooleanField(default=False)
     uuid = models.CharField(max_length=100, blank=True, unique=True, default=uuid.uuid4)
+    accepted = models.NullBooleanField(default=None, null=True)
 
     def get_absolute_url(self):
         return reverse('filling', args=[str(self.id)])

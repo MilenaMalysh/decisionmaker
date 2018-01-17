@@ -26,6 +26,8 @@ urlpatterns = [
     url(r'^submit/(?P<invitation_id>\d+)/$', views.submit, name='submit'),
     url(r'^result/(?P<invitation_id>\d+)/$', views.result_page, name='decision_result'),
     url(r'^decision/(?P<decision_id>\d+)/result/$', views.result_plain, name='decision_result_plain'),
+    url(r'^invitation/(?P<invitation_id>\d+)/accepting$', views.accept_result, name='accept_result'),
     url(r'^index/', views.landing, name='index'),
+    url(r'^thank_you/', views.thank_you, name='thank_you'),
     url(r'^', RedirectView.as_view(pattern_name='index', permanent=False)),
 ]
