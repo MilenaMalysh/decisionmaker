@@ -14,6 +14,7 @@ __pycache__/
 
 # keys
 app/sendgrid.env
+app/client_id.json
 
 # temporary
 *~
