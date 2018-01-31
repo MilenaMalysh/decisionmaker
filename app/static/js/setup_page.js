@@ -53,7 +53,8 @@ var setup = new Vue({
                         }
                     },
                     error: function (jqXHR, textStatus, errorThrown) {
-                        alert("error " + textStatus)
+                        alert("Error occurred during sending invitations. " +
+                            "Please contact support (ivan.prymak@st.ovgu.de)")
                     }
                 });
             }
